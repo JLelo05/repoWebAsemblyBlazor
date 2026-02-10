@@ -1,7 +1,23 @@
 ﻿@page "/"
+@inject IStringLocalizer<SharedResources> Localizer
+@inject CultureService CultureService
+@implements IDisposable
 
-<PageTitle>Home</PageTitle>
+<PageTitle>@Localizer["Home.PageTitle"]</PageTitle>
 
-<h1>Hello, world!</h1>
+<h1>@Localizer["Home.HelloWorld"]</h1>
 
-Welcome to your new app.
+@Localizer["Home.Welcome"]
+
+@code {
+    protected override void OnInitialized()
+    {
+        CultureService.OnCultureChanged += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        CultureService.OnCultureChanged -= StateHasChanged;
+    }
+}
+

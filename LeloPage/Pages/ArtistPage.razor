@@ -1,0 +1,62 @@
+@page "/artist"
+@inject IStringLocalizer<SharedResources> Localizer
+@inject CultureService CultureService
+@implements IDisposable
+
+<PageTitle>@Localizer["Artist.PageTitle"]</PageTitle>
+
+<h1>@Localizer["Artist.Title"]</h1>
+
+<p>@Localizer["Artist.Description"]</p>
+
+<div class="artist-content">
+    <h3>@Localizer["Artist.FeaturedArtists"]</h3>
+
+    @if (artists == null)
+    {
+        <p><em>@Localizer["Artist.Loading"]</em></p>
+    }
+    else
+    {
+        <div class="artist-list">
+            @foreach (var artist in artists)
+            {
+                <div class="artist-card">
+                    <h4>@artist.Name</h4>
+                    <p>@artist.Genre</p>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+@code {
+    private Artist[]? artists;
+
+    protected override void OnInitialized()
+    {
+        CultureService.OnCultureChanged += StateHasChanged;
+        LoadArtists();
+    }
+
+    private void LoadArtists()
+    {
+        artists = new[]
+        {
+            new Artist { Name = "Artist 1", Genre = "Rock" },
+            new Artist { Name = "Artist 2", Genre = "Jazz" },
+            new Artist { Name = "Artist 3", Genre = "Classical" }
+        };
+    }
+
+    public void Dispose()
+    {
+        CultureService.OnCultureChanged -= StateHasChanged;
+    }
+
+    private class Artist
+    {
+        public string Name { get; set; } = string.Empty;
+        public string Genre { get; set; } = string.Empty;
+    }
+}

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" msdata:Ordinal="5" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Nav.Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Nav.Counter" xml:space="preserve">
+    <value>Counter</value>
+  </data>
+  <data name="Nav.Weather" xml:space="preserve">
+    <value>Weather</value>
+  </data>
+  <data name="Nav.NavigationMenu" xml:space="preserve">
+    <value>Navigation menu</value>
+  </data>
+  <data name="Home.PageTitle" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Home.HelloWorld" xml:space="preserve">
+    <value>Hello, world!</value>
+  </data>
+  <data name="Home.Welcome" xml:space="preserve">
+    <value>Welcome to your new app.</value>
+  </data>
+  <data name="Counter.PageTitle" xml:space="preserve">
+    <value>Counter</value>
+  </data>
+  <data name="Counter.Title" xml:space="preserve">
+    <value>Counter</value>
+  </data>
+  <data name="Counter.CurrentCount" xml:space="preserve">
+    <value>Current count</value>
+  </data>
+  <data name="Counter.ClickMe" xml:space="preserve">
+    <value>Click me</value>
+  </data>
+  <data name="Weather.PageTitle" xml:space="preserve">
+    <value>Weather</value>
+  </data>
+  <data name="Weather.Title" xml:space="preserve">
+    <value>Weather</value>
+  </data>
+  <data name="Weather.Description" xml:space="preserve">
+    <value>This component demonstrates fetching data from the server.</value>
+  </data>
+  <data name="Weather.Loading" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="Weather.Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="Weather.TempC" xml:space="preserve">
+    <value>Temp. (C)</value>
+  </data>
+  <data name="Weather.TempF" xml:space="preserve">
+    <value>Temp. (F)</value>
+  </data>
+  <data name="Weather.Summary" xml:space="preserve">
+    <value>Summary</value>
+  </data>
+  <data name="Weather.TempCelsiusLabel" xml:space="preserve">
+    <value>Temperature in Celsius</value>
+  </data>
+  <data name="Weather.TempFahrenheitLabel" xml:space="preserve">
+    <value>Temperature in Fahrenheit</value>
+  </data>
+  <data name="NotFound.PageTitle" xml:space="preserve">
+    <value>Not found</value>
+  </data>
+  <data name="NotFound.Message" xml:space="preserve">
+    <value>Sorry, there's nothing at this address.</value>
+  </data>
+  <data name="Error.UnhandledError" xml:space="preserve">
+    <value>An unhandled error has occurred.</value>
+  </data>
+  <data name="Error.Reload" xml:space="preserve">
+    <value>Reload</value>
+  </data>
+  <data name="Language.English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="Language.Slovak" xml:space="preserve">
+    <value>Slovenčina</value>
+  </data>
+  <data name="Language.Czech" xml:space="preserve">
+    <value>Čeština</value>
+  </data>
+  <data name="Nav.Artist" xml:space="preserve">
+    <value>Artists</value>
+  </data>
+  <data name="Artist.PageTitle" xml:space="preserve">
+    <value>Artists</value>
+  </data>
+  <data name="Artist.Title" xml:space="preserve">
+    <value>Artists</value>
+  </data>
+  <data name="Artist.Description" xml:space="preserve">
+    <value>Explore our collection of talented artists.</value>
+  </data>
+  <data name="Artist.FeaturedArtists" xml:space="preserve">
+    <value>Featured Artists</value>
+  </data>
+  <data name="Artist.Loading" xml:space="preserve">
+    <value>Loading artists...</value>
+  </data>
+</root>
