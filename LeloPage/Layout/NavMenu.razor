@@ -7,24 +7,22 @@
         <a class="navbar-brand" href=""></a>
         <nav class="nav flex-row">
             <div class="nav-item px-3">
-                <NavLink class="nav-link" href="artist">
-                    <span class="bi bi-paint-brush-nav-menu" aria-hidden="true"></span> @Localizer["Nav.Artist"]
+                <NavLink class="nav-link" href="artist" aria-label="@Localizer["Nav.Art"]">
+                    <span class="bi bi-paint-brush-nav-menu" aria-hidden="true"></span>
+                    <span class="nav-link-text">@Localizer["Nav.Art"]</span>
                 </NavLink>
             </div>
             <div class="nav-item px-3">
-                <NavLink class="nav-link" href="counter">
-                    <span class="bi bi-paint-brush-nav-menu" aria-hidden="true"></span> @Localizer["Nav.Counter"]
-                </NavLink>
-            </div>
-            <div class="nav-item px-3">
-                <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                    <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> @Localizer["Nav.Home"]
+                <NavLink class="nav-link" href="" Match="NavLinkMatch.All" aria-label="@Localizer["Nav.Home"]">
+                    <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span>
+                    <span class="nav-link-text">@Localizer["Nav.Home"]</span>
                 </NavLink>
             </div>
 
             <div class="nav-item px-3">
-                <NavLink class="nav-link" href="weather">
-                    <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> @Localizer["Nav.Weather"]
+                <NavLink class="nav-link" href="automat" aria-label="@Localizer["Nav.Automat"]">
+                    <span class="bi bi-display-fill-nav-menu" aria-hidden="true"></span>
+                    <span class="nav-link-text">@Localizer["Nav.Automat"]</span>
                 </NavLink>
             </div>
         </nav>

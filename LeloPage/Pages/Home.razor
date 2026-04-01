@@ -5,9 +5,104 @@
 
 <PageTitle>@Localizer["Home.PageTitle"]</PageTitle>
 
-<h1>@Localizer["Home.HelloWorld"]</h1>
+<div class="home-split">
+    <a href="/artist" class="home-panel">
+        <div class="home-panel-bg">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" fill="none" stroke="currentColor" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round">
+                <!-- Background landscape arches -->
+                <path d="M0,175 Q30,162 60,168 Q90,174 100,165 Q110,174 140,168 Q170,162 200,175"/>
+                <path d="M0,188 Q50,180 100,183 Q150,180 200,188"/>
+                <!-- Parapet hint -->
+                <path d="M28,218 L172,218"/>
+                <path d="M28,223 L172,223"/>
+                <!-- Dress/body -->
+                <path d="M42,300 L47,242 Q58,226 78,220 L82,215"/>
+                <path d="M158,300 L153,242 Q142,226 122,220 L118,215"/>
+                <path d="M42,300 L158,300"/>
+                <!-- Shoulders & collar -->
+                <path d="M82,215 Q100,210 118,215"/>
+                <path d="M78,220 Q100,213 122,220"/>
+                <!-- Neck -->
+                <path d="M93,214 L91,196"/>
+                <path d="M107,214 L109,196"/>
+                <!-- Face oval -->
+                <ellipse cx="100" cy="153" rx="31" ry="41"/>
+                <!-- Hairline -->
+                <path d="M71,137 Q76,106 100,103 Q124,106 129,137"/>
+                <!-- Left hair -->
+                <path d="M71,137 Q62,158 65,210"/>
+                <path d="M74,135 Q66,156 69,207"/>
+                <!-- Right hair -->
+                <path d="M129,137 Q138,158 135,210"/>
+                <!-- Left eyebrow -->
+                <path d="M83,140 Q88,137 93,139"/>
+                <!-- Right eyebrow -->
+                <path d="M107,139 Q112,137 117,140"/>
+                <!-- Left eye -->
+                <path d="M84,147 Q88,143 92,147 Q88,151 84,147"/>
+                <circle cx="88" cy="147" r="2" fill="currentColor" stroke="none"/>
+                <!-- Right eye -->
+                <path d="M108,147 Q112,143 116,147 Q112,151 108,147"/>
+                <circle cx="112" cy="147" r="2" fill="currentColor" stroke="none"/>
+                <!-- Nose -->
+                <path d="M100,156 Q96,163 98,168 Q100,170 102,168 Q104,163 100,156"/>
+                <!-- Mouth (subtle Mona Lisa smile) -->
+                <path d="M91,176 Q96,180 100,179 Q104,180 109,176"/>
+                <path d="M91,176 Q96,182 100,182 Q104,182 109,176"/>
+                <!-- Hands -->
+                <path d="M58,268 Q68,254 83,257 Q88,265 82,270"/>
+                <path d="M82,270 Q87,277 92,270 Q97,277 100,270"/>
+                <path d="M142,268 Q132,254 117,257 Q112,265 118,270"/>
+                <path d="M118,270 Q113,277 108,270 Q103,277 100,270"/>
+            </svg>
+        </div>
+        <div class="home-panel-content">
+            <img class="home-panel-icon" src="/Resources/art.ico" alt="Art" />
+            <h2>@Localizer["Nav.Art"]</h2>
+        </div>
+    </a>
 
-@Localizer["Home.Welcome"]
+    <div class="home-divider"></div>
+
+    <a href="/automat" class="home-panel">
+        <div class="home-panel-bg">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" fill="none" stroke="currentColor" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round">
+                <!-- Pellet trail -->
+                <circle cx="168" cy="100" r="4" fill="currentColor" stroke="none"/>
+                <circle cx="192" cy="100" r="4" fill="currentColor" stroke="none"/>
+                <circle cx="216" cy="100" r="4" fill="currentColor" stroke="none"/>
+                <circle cx="240" cy="100" r="4" fill="currentColor" stroke="none"/>
+                <circle cx="264" cy="100" r="4" fill="currentColor" stroke="none"/>
+                <!-- Power pellet -->
+                <circle cx="282" cy="100" r="7" fill="currentColor" stroke="none"/>
+                <!-- Pac-Man body: center(95,100) r=52, mouth ±28° -->
+                <!-- top of mouth: 95+52*cos(28°)=90.9→140.9,  100-52*sin(28°)=75.6 -->
+                <!-- bottom: 140.9, 124.4 -->
+                <path d="M95,100 L141,76 A52,52 0 1,0 141,124 Z"/>
+                <!-- Eye -->
+                <circle cx="107" cy="78" r="4" fill="currentColor" stroke="none"/>
+                <!-- Ghost body -->
+                <path d="M208,52 Q208,28 232,28 Q256,28 256,52 L256,78 Q251,70 245,78 Q239,70 232,78 Q225,70 219,78 Q213,70 208,78 Z"/>
+                <!-- Ghost eyes (whites + pupils) -->
+                <ellipse cx="222" cy="48" rx="5" ry="6"/>
+                <circle cx="223" cy="50" r="2.5" fill="currentColor" stroke="none"/>
+                <ellipse cx="242" cy="48" rx="5" ry="6"/>
+                <circle cx="243" cy="50" r="2.5" fill="currentColor" stroke="none"/>
+                <!-- Maze corridor lines (hint of the maze) -->
+                <path d="M20,40 L20,165 L270,165 L270,140"/>
+                <path d="M20,40 L270,40 L270,65"/>
+                <path d="M50,40 L50,75 L120,75 L120,40"/>
+                <path d="M150,40 L150,75 L220,75"/>
+                <path d="M50,130 L50,165"/>
+                <path d="M80,130 L170,130 L170,165"/>
+            </svg>
+        </div>
+        <div class="home-panel-content">
+            <img class="home-panel-icon" src="/Resources/automat.ico" alt="Automat" />
+            <h2>@Localizer["Nav.Automat"]</h2>
+        </div>
+    </a>
+</div>
 
 @code {
     protected override void OnInitialized()

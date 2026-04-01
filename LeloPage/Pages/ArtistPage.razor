@@ -1,52 +1,152 @@
 @page "/artist"
+@inject IJSRuntime JS
 @inject IStringLocalizer<SharedResources> Localizer
 @inject CultureService CultureService
 @implements IDisposable
+@using System.Text.Json
+@using System.Globalization
 
 <PageTitle>@Localizer["Artist.PageTitle"]</PageTitle>
 
-<h1>@Localizer["Artist.Title"]</h1>
+<div class="calendar-wrapper">
+    <h2>@Localizer["Artist.Calendar.Title"]</h2>
 
-<p>@Localizer["Artist.Description"]</p>
+    <div class="cal-header">
+        <button class="cal-nav" @onclick="PrevMonth">&#8249;</button>
+        <span class="cal-month-title">@_current.ToString("MMMM yyyy", CultureInfo.CurrentCulture)</span>
+        <button class="cal-nav" @onclick="NextMonth">&#8250;</button>
+    </div>
 
-<div class="artist-content">
-    <h3>@Localizer["Artist.FeaturedArtists"]</h3>
+    <div class="cal-grid">
+        @foreach (var dow in GetDayNames())
+        {
+            <div class="cal-cell cal-dow">@dow</div>
+        }
 
-    @if (artists == null)
-    {
-        <p><em>@Localizer["Artist.Loading"]</em></p>
-    }
-    else
-    {
-        <div class="artist-list">
-            @foreach (var artist in artists)
+        @foreach (var day in CalendarDays())
+        {
+            @if (day == null)
             {
-                <div class="artist-card">
-                    <h4>@artist.Name</h4>
-                    <p>@artist.Genre</p>
+                <div class="cal-cell cal-empty"></div>
+            }
+            else
+            {
+                var d = day.Value;
+                var isToday    = d.Date == DateTime.Today;
+                var isSelected = _selected.HasValue && _selected.Value.Date == d.Date;
+                var isPast     = d.Date < DateTime.Today;
+                <div class="cal-cell cal-day @(isToday ? "cal-today" : "") @(isSelected ? "cal-selected" : "") @(isPast ? "cal-past" : "")"
+                     @onclick="() => SelectDay(d)">
+                    @d.Day
                 </div>
             }
+        }
+    </div>
+
+    @if (_selected.HasValue)
+    {
+        <div class="cal-action">
+            <span>@Localizer["Artist.Calendar.Selected"] <strong>@_selected.Value.ToString("dd. MM. yyyy")</strong></span>
+            <button class="btn-register" @onclick="OpenModal">@Localizer["Artist.Calendar.Register"]</button>
         </div>
     }
 </div>
 
-@code {
-    private Artist[]? artists;
+@if (!string.IsNullOrEmpty(_infoMsg))
+{
+    <div class="cal-info-banner">
+        <span>@_infoMsg</span>
+        <button class="btn-dismiss" @onclick="() => _infoMsg = string.Empty">&#x2715;</button>
+    </div>
+}
 
-    protected override void OnInitialized()
+@if (_registrations.Count > 0)
+{
+    <div class="registrations-list">
+        <h4>@Localizer["Artist.Calendar.SavedTitle"]</h4>
+        <ul>
+            @foreach (var r in _registrations)
+            {
+                <li>@r.ToDisplayString()</li>
+            }
+        </ul>
+    </div>
+}
+
+@if (_showModal)
+{
+    <div class="modal-overlay" @onclick="CloseModal">
+        <div class="modal-box" @onclick:stopPropagation="true">
+            <h4>@Localizer["Artist.Modal.Title"]</h4>
+            <p class="modal-date">@_selected!.Value.ToString("dd. MM. yyyy")</p>
+
+            @if (_dayBookings.Count > 0)
+            {
+                <div class="modal-booked">
+                    <span class="modal-booked-label">@Localizer["Artist.Modal.ExistingBookings"]</span>
+                    <ul class="modal-booked-list">
+                        @foreach (var t in _dayBookings)
+                        {
+                            <li>@t</li>
+                        }
+                    </ul>
+                </div>
+            }
+
+            <div class="modal-field">
+                <label for="regTime">@Localizer["Artist.Modal.TimeLabel"] (08:00 – 17:00)</label>
+                <input id="regTime" type="time" min="08:00" max="17:00" value="@_time" @oninput="e => _time = e.Value?.ToString() ?? string.Empty" />
+            </div>
+
+            <div class="modal-field">
+                <label for="regLessons">@Localizer["Artist.Modal.LessonsLabel"] (1 – 5)</label>
+                <input id="regLessons" type="number" min="1" max="5" value="@_lessons"
+                       @oninput="e => int.TryParse(e.Value?.ToString(), out _lessons)" />
+            </div>
+
+            <div class="modal-field">
+                <label for="regName">@Localizer["Artist.Modal.NameLabel"]</label>
+                <input id="regName" type="text" value="@_name" @oninput="e => _name = e.Value?.ToString() ?? string.Empty" />
+            </div>
+
+            <div class="modal-field">
+                <label for="regPhone">@Localizer["Artist.Modal.PhoneLabel"]</label>
+                <input id="regPhone" type="tel" value="@_phone" @oninput="e => _phone = e.Value?.ToString() ?? string.Empty" />
+            </div>
+
+            @if (!string.IsNullOrEmpty(_errorMsg))
+            {
+                <p class="modal-error">@_errorMsg</p>
+            }
+            <div class="modal-actions">
+                <button class="btn-save" @onclick="SaveRegistration">@Localizer["Artist.Modal.Save"]</button>
+                <button class="btn-cancel" @onclick="CloseModal">@Localizer["Artist.Modal.Cancel"]</button>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    private DateTime  _current  = DateTime.Today;
+    private DateTime? _selected;
+    private bool      _showModal;
+    private string    _time     = "10:00";
+    private int       _lessons  = 0;
+    private string    _name     = string.Empty;
+    private string    _phone    = string.Empty;
+    private string    _errorMsg = string.Empty;
+    private string    _infoMsg  = string.Empty;
+    private List<Registration> _registrations = new();
+    private List<string>       _dayBookings   = new();
+
+    private const string StorageKey = "artistRegistrations";
+
+    // ── Lifecycle ────────────────────────────────────────────
+
+    protected override async Task OnInitializedAsync()
     {
         CultureService.OnCultureChanged += StateHasChanged;
-        LoadArtists();
-    }
-
-    private void LoadArtists()
-    {
-        artists = new[]
-        {
-            new Artist { Name = "Artist 1", Genre = "Rock" },
-            new Artist { Name = "Artist 2", Genre = "Jazz" },
-            new Artist { Name = "Artist 3", Genre = "Classical" }
-        };
+        await LoadRegistrations();
     }
 
     public void Dispose()
@@ -54,9 +154,248 @@
         CultureService.OnCultureChanged -= StateHasChanged;
     }
 
-    private class Artist
+    // ── Calendar navigation ───────────────────────────────────
+
+    private void PrevMonth() => _current = _current.AddMonths(-1);
+    private void NextMonth() => _current = _current.AddMonths(1);
+
+    private void SelectDay(DateTime day)
     {
-        public string Name { get; set; } = string.Empty;
-        public string Genre { get; set; } = string.Empty;
+        if (day.Date < DateTime.Today) return;
+        _selected  = day;
+        _infoMsg   = string.Empty;
+        _showModal = false;
+    }
+
+    // ── Modal ────────────────────────────────────────────────
+
+    private void OpenModal()
+    {
+        _errorMsg    = string.Empty;
+        _time        = "10:00";
+        _lessons     = 0;
+        _name        = string.Empty;
+        _phone       = string.Empty;
+        _dayBookings = GetBookingsForDay(_selected!.Value);
+        _showModal   = true;
+    }
+
+    private void CloseModal() => _showModal = false;
+
+    private async Task SaveRegistration()
+    {
+        // 1. Time empty
+        if (string.IsNullOrWhiteSpace(_time))
+        {
+            _errorMsg = Localizer["Artist.Modal.ErrorTime"];
+            return;
+        }
+        // 2. Time range
+        if (!IsTimeInRange(_time))
+        {
+            _errorMsg = Localizer["Artist.Modal.ErrorTimeRange"];
+            return;
+        }
+        // 3. Lessons
+        if (_lessons < 1 || _lessons > 5)
+        {
+            _errorMsg = Localizer["Artist.Modal.ErrorLessons"];
+            return;
+        }
+        // 4. Name
+        if (string.IsNullOrWhiteSpace(_name))
+        {
+            _errorMsg = Localizer["Artist.Modal.ErrorName"];
+            return;
+        }
+        // 5. Phone
+        if (string.IsNullOrWhiteSpace(_phone))
+        {
+            _errorMsg = Localizer["Artist.Modal.ErrorPhone"];
+            return;
+        }
+        // 6. Overlap check (uses lesson count to compute time range)
+        if (IsTimeConflicting(_selected!.Value, _time, _lessons))
+        {
+            _errorMsg = Localizer["Artist.Modal.ErrorTimeBooked"];
+            return;
+        }
+
+        var d  = _selected!.Value;
+        var parts = _time.Split(':');
+        var hh    = parts[0].PadLeft(2, '0');
+        var min   = parts.Length > 1 ? parts[1].PadLeft(2, '0') : "00";
+
+        _registrations.Add(new Registration
+        {
+            DateStr = DateKey(d),
+            TimeStr = $"{hh}::{min}",
+            Name    = _name.Trim(),
+            Lessons = _lessons,
+            Phone   = _phone.Trim()
+        });
+
+        await PersistRegistrations();
+
+        // Build info message with next free slots
+        var free = GetNextFreeSlots(d);
+        _infoMsg = free.Count > 0
+            ? $"{Localizer["Artist.Modal.InfoReservation"]} {Localizer["Artist.Modal.NextFree"]} {string.Join(", ", free)}"
+            : Localizer["Artist.Modal.InfoReservation"];
+
+        _showModal = false;
+        _selected  = null;
+    }
+
+    // ── Schedule helpers ──────────────────────────────────────
+
+    // DD:MM::YY key for a date
+    private static string DateKey(DateTime d) =>
+        $"{d.Day:D2}:{d.Month:D2}::{(d.Year % 100):D2}";
+
+    // Parse "HH:MM" or "HH::MM" to total minutes
+    private static int ParseMinutes(string time)
+    {
+        var clean = time.Replace("::", ":");
+        var p = clean.Split(':');
+        return int.Parse(p[0]) * 60 + int.Parse(p[1]);
+    }
+
+    private static bool IsTimeInRange(string time)
+    {
+        var parts = time.Split(':');
+        if (parts.Length < 2) return false;
+        if (!int.TryParse(parts[0], out int h) || !int.TryParse(parts[1], out int m)) return false;
+        var total = h * 60 + m;
+        return total >= 8 * 60 && total <= 17 * 60;
+    }
+
+    // True if [time, time+lessons*60) overlaps any existing booking for that day
+    private bool IsTimeConflicting(DateTime date, string time, int lessons)
+    {
+        var newStart = ParseMinutes(time);
+        var newEnd   = newStart + lessons * 60;
+        var key      = DateKey(date);
+
+        return _registrations
+            .Where(r => r.DateStr == key)
+            .Any(r => newStart < r.EndMinutes() && r.StartMinutes() < newEnd);
+    }
+
+    // Booked time-range strings for modal display
+    private List<string> GetBookingsForDay(DateTime date)
+    {
+        var key = DateKey(date);
+        return _registrations
+            .Where(r => r.DateStr == key)
+            .OrderBy(r => r.StartMinutes())
+            .Select(r =>
+            {
+                var sm = r.StartMinutes();
+                var em = r.EndMinutes();
+                return $"{sm / 60:D2}:{sm % 60:D2} – {em / 60:D2}:{em % 60:D2} ({r.Lessons}L)";
+            })
+            .ToList();
+    }
+
+    // Up to 3 next free 60-min slots within 08:00–17:00 on the given day
+    private List<string> GetNextFreeSlots(DateTime date)
+    {
+        const int dayStart = 8 * 60;
+        const int dayEnd   = 17 * 60;
+        const int slot     = 60;
+
+        var key      = DateKey(date);
+        var occupied = _registrations
+            .Where(r => r.DateStr == key)
+            .OrderBy(r => r.StartMinutes())
+            .Select(r => (r.StartMinutes(), r.EndMinutes()))
+            .ToList();
+
+        var free   = new List<string>();
+        var cursor = dayStart;
+
+        foreach (var (start, end) in occupied)
+        {
+            while (cursor + slot <= start && free.Count < 3)
+            {
+                free.Add($"{cursor / 60:D2}:{cursor % 60:D2}");
+                cursor += slot;
+            }
+            if (end > cursor) cursor = end;
+        }
+        while (cursor + slot <= dayEnd && free.Count < 3)
+        {
+            free.Add($"{cursor / 60:D2}:{cursor % 60:D2}");
+            cursor += slot;
+        }
+
+        return free;
+    }
+
+    // ── Persistence ───────────────────────────────────────────
+
+    private async Task LoadRegistrations()
+    {
+        try
+        {
+            var json = await JS.InvokeAsync<string?>("localStorage.getItem", StorageKey);
+            if (!string.IsNullOrEmpty(json))
+            {
+                var items = JsonSerializer.Deserialize<List<Registration>>(json);
+                if (items != null) _registrations = items;
+            }
+        }
+        catch { }
+    }
+
+    private async Task PersistRegistrations()
+    {
+        var json = JsonSerializer.Serialize(_registrations);
+        await JS.InvokeVoidAsync("localStorage.setItem", StorageKey, json);
+    }
+
+    // ── Calendar rendering ────────────────────────────────────
+
+    private string[] GetDayNames()
+    {
+        var names = CultureInfo.CurrentCulture.DateTimeFormat.AbbreviatedDayNames;
+        return new[] { names[1], names[2], names[3], names[4], names[5], names[6], names[0] };
+    }
+
+    private IEnumerable<DateTime?> CalendarDays()
+    {
+        var first       = new DateTime(_current.Year, _current.Month, 1);
+        var daysInMonth = DateTime.DaysInMonth(_current.Year, _current.Month);
+        var offset      = ((int)first.DayOfWeek + 6) % 7;
+
+        var days = new List<DateTime?>();
+        for (int i = 0; i < offset; i++)       days.Add(null);
+        for (int d = 1; d <= daysInMonth; d++) days.Add(new DateTime(_current.Year, _current.Month, d));
+        while (days.Count % 7 != 0)            days.Add(null);
+        return days;
+    }
+
+    // ── Registration model ────────────────────────────────────
+
+    private class Registration
+    {
+        public string DateStr { get; set; } = "";   // DD:MM::YY
+        public string TimeStr { get; set; } = "";   // HH::MM
+        public string Name    { get; set; } = "";
+        public int    Lessons { get; set; } = 1;
+        public string Phone   { get; set; } = "";   // stored, never displayed
+
+        public int StartMinutes()
+        {
+            var p = TimeStr.Replace("::", ":").Split(':');
+            return int.Parse(p[0]) * 60 + int.Parse(p[1]);
+        }
+
+        public int EndMinutes() => StartMinutes() + Lessons * 60;
+
+        // Name and Lessons are visible; Phone is hidden
+        public string ToDisplayString() =>
+            $"{DateStr} - {TimeStr} - {Name} - {Lessons}L";
     }
 }

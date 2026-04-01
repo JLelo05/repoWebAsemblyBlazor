@@ -1,0 +1,320 @@
+/* ── Calendar wrapper ─────────────────────────────────────── */
+.calendar-wrapper {
+    max-width: 480px;
+    margin: 2rem auto;
+    font-family: inherit;
+}
+
+.calendar-wrapper h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* ── Month navigation header ──────────────────────────────── */
+.cal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+}
+
+.cal-month-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.cal-nav {
+    background: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.2rem 0.7rem;
+    font-size: 1.4rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: background 0.15s;
+}
+
+.cal-nav:hover {
+    background: #f0f0f0;
+}
+
+/* ── Calendar grid (7 columns) ────────────────────────────── */
+.cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+}
+
+.cal-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    user-select: none;
+}
+
+/* Day-of-week headers */
+.cal-dow {
+    font-weight: 700;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    color: #888;
+    height: 28px;
+}
+
+/* Empty filler cells */
+.cal-empty {
+    background: transparent;
+}
+
+/* Clickable day cells */
+.cal-day {
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.cal-day:hover:not(.cal-past) {
+    background: #e8f0fe;
+    border-color: #4a80f0;
+}
+
+/* Today highlight */
+.cal-today {
+    border-color: #4a80f0 !important;
+    font-weight: 700;
+    color: #1a56db;
+}
+
+/* Selected day */
+.cal-selected {
+    background: #4a80f0 !important;
+    color: #fff !important;
+    border-color: #2c5ecf !important;
+    font-weight: 700;
+}
+
+/* Past days — greyed out, not clickable */
+.cal-past {
+    color: #bbb;
+    cursor: default;
+}
+
+/* ── Selected-day action bar ──────────────────────────────── */
+.cal-action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding: 0.6rem 0.8rem;
+    background: #e0e0e0;
+    border: 1px solid #bdbdbd;
+    border-radius: 8px;
+    color: #424242;
+}
+
+.btn-register {
+    background: #4a80f0;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.btn-register:hover {
+    background: #2c5ecf;
+}
+
+/* ── Saved registrations list ─────────────────────────────── */
+.registrations-list {
+    max-width: 480px;
+    margin: 1.5rem auto 0;
+}
+
+.registrations-list h4 {
+    margin-bottom: 0.5rem;
+}
+
+.registrations-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.registrations-list li {
+    padding: 0.35rem 0.6rem;
+    border-bottom: 1px solid #eee;
+    font-family: monospace;
+    font-size: 0.95rem;
+}
+
+/* ── Modal overlay ────────────────────────────────────────── */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* ── Modal box ────────────────────────────────────────────── */
+.modal-box {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1.8rem 2rem;
+    min-width: 300px;
+    max-width: 380px;
+    width: 90%;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.modal-box h4 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+}
+
+.modal-date {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #4a80f0;
+    margin-bottom: 1rem;
+}
+
+.modal-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-bottom: 1rem;
+}
+
+.modal-field label {
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.modal-field input {
+    padding: 0.4rem 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.modal-field input[type="number"] {
+    width: 6rem;
+}
+
+.modal-error {
+    color: #d32f2f;
+    font-size: 0.85rem;
+    margin: 0 0 0.75rem;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: flex-end;
+}
+
+.btn-save {
+    background: #4a80f0;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.45rem 1.1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.btn-save:hover {
+    background: #2c5ecf;
+}
+
+.btn-cancel {
+    background: none;
+    color: #555;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 0.45rem 1.1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.btn-cancel:hover {
+    background: #f5f5f5;
+}
+
+/* ── Info banner (shown after successful reservation) ─────── */
+.cal-info-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 480px;
+    margin: 0.75rem auto 0;
+    padding: 0.6rem 0.8rem;
+    background: #e8f5e9;
+    border: 1px solid #a5d6a7;
+    border-radius: 8px;
+    color: #2e7d32;
+    font-size: 0.9rem;
+}
+
+.btn-dismiss {
+    background: none;
+    border: none;
+    color: #2e7d32;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0 0.2rem;
+    line-height: 1;
+    opacity: 0.7;
+}
+
+.btn-dismiss:hover {
+    opacity: 1;
+}
+
+/* ── Already-booked list inside modal ─────────────────────── */
+.modal-booked {
+    background: #fff8e1;
+    border: 1px solid #ffe082;
+    border-radius: 6px;
+    padding: 0.5rem 0.7rem;
+    margin-bottom: 0.9rem;
+}
+
+.modal-booked-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #795548;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.modal-booked-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+
+.modal-booked-list li {
+    background: #ffcc02;
+    color: #333;
+    border-radius: 4px;
+    padding: 0.15rem 0.5rem;
+    font-family: monospace;
+    font-size: 0.85rem;
+}

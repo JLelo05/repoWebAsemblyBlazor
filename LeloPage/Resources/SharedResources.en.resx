@@ -142,6 +142,9 @@
   <data name="Language.Czech" xml:space="preserve">
     <value>Čeština</value>
   </data>
+  <data name="Nav.Art" xml:space="preserve">
+    <value>Art</value>
+  </data>
   <data name="Nav.Artist" xml:space="preserve">
     <value>Artists</value>
   </data>
@@ -159,5 +162,107 @@
   </data>
   <data name="Artist.Loading" xml:space="preserve">
     <value>Loading artists...</value>
+  </data>
+  <data name="Nav.Automat" xml:space="preserve">
+    <value>Automat</value>
+  </data>
+  <data name="Automat.PageTitle" xml:space="preserve">
+    <value>Automat</value>
+  </data>
+  <data name="Automat.Title" xml:space="preserve">
+    <value>Automat</value>
+  </data>
+  <data name="Automat.Description" xml:space="preserve">
+    <value>Software development overview — tech stack, task board, pipeline and tools.</value>
+  </data>
+  <data name="Automat.TechStack" xml:space="preserve">
+    <value>Technology Stack</value>
+  </data>
+  <data name="Automat.TaskBoard" xml:space="preserve">
+    <value>Task Board</value>
+  </data>
+  <data name="Automat.TaskPending" xml:space="preserve">
+    <value>Pending</value>
+  </data>
+  <data name="Automat.TaskInProgress" xml:space="preserve">
+    <value>In Progress</value>
+  </data>
+  <data name="Automat.TaskDone" xml:space="preserve">
+    <value>Done</value>
+  </data>
+  <data name="Automat.Pipeline" xml:space="preserve">
+    <value>Build Pipeline</value>
+  </data>
+  <data name="Automat.PipelineStage" xml:space="preserve">
+    <value>Stage</value>
+  </data>
+  <data name="Automat.PipelineStatus" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Automat.PipelineDuration" xml:space="preserve">
+    <value>Duration</value>
+  </data>
+  <data name="Automat.Tools" xml:space="preserve">
+    <value>Tools &amp; Frameworks</value>
+  </data>
+  <data name="Artist.Calendar.Title" xml:space="preserve">
+    <value>Registration Calendar</value>
+  </data>
+  <data name="Artist.Calendar.Selected" xml:space="preserve">
+    <value>Selected:</value>
+  </data>
+  <data name="Artist.Calendar.Register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Artist.Calendar.SavedTitle" xml:space="preserve">
+    <value>Saved Registrations</value>
+  </data>
+  <data name="Artist.Modal.Title" xml:space="preserve">
+    <value>New Registration</value>
+  </data>
+  <data name="Artist.Modal.TimeLabel" xml:space="preserve">
+    <value>Proposed time</value>
+  </data>
+  <data name="Artist.Modal.Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Artist.Modal.Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Artist.Modal.ErrorTime" xml:space="preserve">
+    <value>Please enter a time.</value>
+  </data>
+  <data name="Artist.Modal.ErrorTimeRange" xml:space="preserve">
+    <value>Time must be between 08:00 and 17:00.</value>
+  </data>
+  <data name="Artist.Modal.ErrorTimeBooked" xml:space="preserve">
+    <value>This time slot is already taken for the selected day.</value>
+  </data>
+  <data name="Artist.Modal.InfoReservation" xml:space="preserve">
+    <value>Reservation submitted. The time will be evaluated.</value>
+  </data>
+  <data name="Artist.Modal.ExistingBookings" xml:space="preserve">
+    <value>Already booked for this day:</value>
+  </data>
+  <data name="Artist.Modal.LessonsLabel" xml:space="preserve">
+    <value>Number of lessons</value>
+  </data>
+  <data name="Artist.Modal.NameLabel" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Artist.Modal.PhoneLabel" xml:space="preserve">
+    <value>Phone number</value>
+  </data>
+  <data name="Artist.Modal.ErrorLessons" xml:space="preserve">
+    <value>Please select 1 to 5 lessons.</value>
+  </data>
+  <data name="Artist.Modal.ErrorName" xml:space="preserve">
+    <value>Please enter your name.</value>
+  </data>
+  <data name="Artist.Modal.ErrorPhone" xml:space="preserve">
+    <value>Please enter your phone number.</value>
+  </data>
+  <data name="Artist.Modal.NextFree" xml:space="preserve">
+    <value>Next available:</value>
   </data>
 </root>

@@ -142,6 +142,9 @@
   <data name="Language.Czech" xml:space="preserve">
     <value>Čeština</value>
   </data>
+  <data name="Nav.Art" xml:space="preserve">
+    <value>Umenie</value>
+  </data>
   <data name="Nav.Artist" xml:space="preserve">
     <value>Umelci</value>
   </data>
@@ -159,5 +162,107 @@
   </data>
   <data name="Artist.Loading" xml:space="preserve">
     <value>Načítavam umelcov...</value>
+  </data>
+  <data name="Nav.Automat" xml:space="preserve">
+    <value>Automat</value>
+  </data>
+  <data name="Automat.PageTitle" xml:space="preserve">
+    <value>Automat</value>
+  </data>
+  <data name="Automat.Title" xml:space="preserve">
+    <value>Automat</value>
+  </data>
+  <data name="Automat.Description" xml:space="preserve">
+    <value>Prehľad vývoja softvéru — technológie, úlohy, pipeline a nástroje.</value>
+  </data>
+  <data name="Automat.TechStack" xml:space="preserve">
+    <value>Technologický stack</value>
+  </data>
+  <data name="Automat.TaskBoard" xml:space="preserve">
+    <value>Nástenka úloh</value>
+  </data>
+  <data name="Automat.TaskPending" xml:space="preserve">
+    <value>Čakajúce</value>
+  </data>
+  <data name="Automat.TaskInProgress" xml:space="preserve">
+    <value>V riešení</value>
+  </data>
+  <data name="Automat.TaskDone" xml:space="preserve">
+    <value>Hotovo</value>
+  </data>
+  <data name="Automat.Pipeline" xml:space="preserve">
+    <value>Build pipeline</value>
+  </data>
+  <data name="Automat.PipelineStage" xml:space="preserve">
+    <value>Fáza</value>
+  </data>
+  <data name="Automat.PipelineStatus" xml:space="preserve">
+    <value>Stav</value>
+  </data>
+  <data name="Automat.PipelineDuration" xml:space="preserve">
+    <value>Trvanie</value>
+  </data>
+  <data name="Automat.Tools" xml:space="preserve">
+    <value>Nástroje a frameworky</value>
+  </data>
+  <data name="Artist.Calendar.Title" xml:space="preserve">
+    <value>Registračný kalendár</value>
+  </data>
+  <data name="Artist.Calendar.Selected" xml:space="preserve">
+    <value>Vybraný:</value>
+  </data>
+  <data name="Artist.Calendar.Register" xml:space="preserve">
+    <value>Registrovať</value>
+  </data>
+  <data name="Artist.Calendar.SavedTitle" xml:space="preserve">
+    <value>Uložené registrácie</value>
+  </data>
+  <data name="Artist.Modal.Title" xml:space="preserve">
+    <value>Nová registrácia</value>
+  </data>
+  <data name="Artist.Modal.TimeLabel" xml:space="preserve">
+    <value>Navrhovaný čas</value>
+  </data>
+  <data name="Artist.Modal.Save" xml:space="preserve">
+    <value>Uložiť</value>
+  </data>
+  <data name="Artist.Modal.Cancel" xml:space="preserve">
+    <value>Zrušiť</value>
+  </data>
+  <data name="Artist.Modal.ErrorTime" xml:space="preserve">
+    <value>Prosím zadajte čas.</value>
+  </data>
+  <data name="Artist.Modal.ErrorTimeRange" xml:space="preserve">
+    <value>Čas musí byť medzi 08:00 a 17:00.</value>
+  </data>
+  <data name="Artist.Modal.ErrorTimeBooked" xml:space="preserve">
+    <value>Tento čas je pre vybraný deň už obsadený.</value>
+  </data>
+  <data name="Artist.Modal.InfoReservation" xml:space="preserve">
+    <value>Rezervácia bola odoslaná. Čas bude vyhodnotený.</value>
+  </data>
+  <data name="Artist.Modal.ExistingBookings" xml:space="preserve">
+    <value>Už rezervované pre tento deň:</value>
+  </data>
+  <data name="Artist.Modal.LessonsLabel" xml:space="preserve">
+    <value>Počet lekcií</value>
+  </data>
+  <data name="Artist.Modal.NameLabel" xml:space="preserve">
+    <value>Meno</value>
+  </data>
+  <data name="Artist.Modal.PhoneLabel" xml:space="preserve">
+    <value>Telefónne číslo</value>
+  </data>
+  <data name="Artist.Modal.ErrorLessons" xml:space="preserve">
+    <value>Vyberte 1 až 5 lekcií.</value>
+  </data>
+  <data name="Artist.Modal.ErrorName" xml:space="preserve">
+    <value>Zadajte prosím meno.</value>
+  </data>
+  <data name="Artist.Modal.ErrorPhone" xml:space="preserve">
+    <value>Zadajte prosím telefónne číslo.</value>
+  </data>
+  <data name="Artist.Modal.NextFree" xml:space="preserve">
+    <value>Nasledujúce voľné:</value>
   </data>
 </root>

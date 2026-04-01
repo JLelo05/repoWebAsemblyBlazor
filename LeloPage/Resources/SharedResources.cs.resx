@@ -142,4 +142,85 @@
   <data name="Language.Czech" xml:space="preserve">
     <value>Čeština</value>
   </data>
+  <data name="Nav.Art" xml:space="preserve">
+    <value>Umění</value>
+  </data>
+  <data name="Nav.Artist" xml:space="preserve">
+    <value>Umělci</value>
+  </data>
+  <data name="Artist.PageTitle" xml:space="preserve">
+    <value>Umělci</value>
+  </data>
+  <data name="Artist.Title" xml:space="preserve">
+    <value>Umělci</value>
+  </data>
+  <data name="Artist.Description" xml:space="preserve">
+    <value>Prozkoumejte naši sbírku talentovaných umělců.</value>
+  </data>
+  <data name="Artist.FeaturedArtists" xml:space="preserve">
+    <value>Doporučení umělci</value>
+  </data>
+  <data name="Artist.Loading" xml:space="preserve">
+    <value>Načítám umělce...</value>
+  </data>
+  <data name="Artist.Calendar.Title" xml:space="preserve">
+    <value>Registrační kalendář</value>
+  </data>
+  <data name="Artist.Calendar.Selected" xml:space="preserve">
+    <value>Vybraný:</value>
+  </data>
+  <data name="Artist.Calendar.Register" xml:space="preserve">
+    <value>Registrovat</value>
+  </data>
+  <data name="Artist.Calendar.SavedTitle" xml:space="preserve">
+    <value>Uložené registrace</value>
+  </data>
+  <data name="Artist.Modal.Title" xml:space="preserve">
+    <value>Nová registrace</value>
+  </data>
+  <data name="Artist.Modal.TimeLabel" xml:space="preserve">
+    <value>Navrhovaný čas</value>
+  </data>
+  <data name="Artist.Modal.Save" xml:space="preserve">
+    <value>Uložit</value>
+  </data>
+  <data name="Artist.Modal.Cancel" xml:space="preserve">
+    <value>Zrušit</value>
+  </data>
+  <data name="Artist.Modal.ErrorTime" xml:space="preserve">
+    <value>Prosím zadejte čas.</value>
+  </data>
+  <data name="Artist.Modal.ErrorTimeRange" xml:space="preserve">
+    <value>Čas musí být mezi 08:00 a 17:00.</value>
+  </data>
+  <data name="Artist.Modal.ErrorTimeBooked" xml:space="preserve">
+    <value>Tento čas je pro vybraný den již obsazený.</value>
+  </data>
+  <data name="Artist.Modal.InfoReservation" xml:space="preserve">
+    <value>Rezervace byla odeslána. Čas bude vyhodnocen.</value>
+  </data>
+  <data name="Artist.Modal.ExistingBookings" xml:space="preserve">
+    <value>Již rezervováno pro tento den:</value>
+  </data>
+  <data name="Artist.Modal.LessonsLabel" xml:space="preserve">
+    <value>Počet lekcí</value>
+  </data>
+  <data name="Artist.Modal.NameLabel" xml:space="preserve">
+    <value>Jméno</value>
+  </data>
+  <data name="Artist.Modal.PhoneLabel" xml:space="preserve">
+    <value>Telefonní číslo</value>
+  </data>
+  <data name="Artist.Modal.ErrorLessons" xml:space="preserve">
+    <value>Vyberte 1 až 5 lekcí.</value>
+  </data>
+  <data name="Artist.Modal.ErrorName" xml:space="preserve">
+    <value>Prosím zadejte jméno.</value>
+  </data>
+  <data name="Artist.Modal.ErrorPhone" xml:space="preserve">
+    <value>Prosím zadejte telefonní číslo.</value>
+  </data>
+  <data name="Artist.Modal.NextFree" xml:space="preserve">
+    <value>Následující volné:</value>
+  </data>
 </root>
