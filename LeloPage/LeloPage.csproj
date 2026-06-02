@@ -12,5 +12,32 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.3" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Extensions.Localization" Version="9.0.3" />
   </ItemGroup>
+  <UsingTask TaskName="WriteGalleryManifest" TaskFactory="RoslynCodeTaskFactory"
+             AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll">
+    <ParameterGroup>
+      <WorksFolder ParameterType="System.String" Required="true" />
+    </ParameterGroup>
+    <Task>
+      <Using Namespace="System.IO" />
+      <Using Namespace="System.Linq" />
+      <Code Type="Fragment" Language="cs"><![CDATA[
+        var exts = new System.Collections.Generic.HashSet<string>(System.StringComparer.OrdinalIgnoreCase)
+            { ".jpg", ".jpeg", ".png", ".webp" };
+        var files = Directory.Exists(WorksFolder)
+            ? Directory.GetFiles(WorksFolder)
+                .Where(f => exts.Contains(Path.GetExtension(f)))
+                .Select(f => Path.GetFileName(f))
+                .OrderBy(f => f)
+                .ToArray()
+            : new string[0];
+        var json = "[" + string.Join(",", files.Select(f => "\"" + f + "\"")) + "]";
+        File.WriteAllText(Path.Combine(WorksFolder, "manifest.json"), json);
+      ]]></Code>
+    </Task>
+  </UsingTask>
+
+  <Target Name="GenerateGalleryManifest" BeforeTargets="Build">
+    <WriteGalleryManifest WorksFolder="$(MSBuildProjectDirectory)\wwwroot\images\works" />
+  </Target>
 
 </Project>

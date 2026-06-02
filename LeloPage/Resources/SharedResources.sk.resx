@@ -265,4 +265,74 @@
   <data name="Artist.Modal.NextFree" xml:space="preserve">
     <value>Nasledujúce voľné:</value>
   </data>
+  <data name="Artist.Reviews.Header" xml:space="preserve">
+    <value>Hodnotenia</value>
+  </data>
+  <data name="Artist.Reviews.NameLabel" xml:space="preserve">
+    <value>Meno</value>
+  </data>
+  <data name="Artist.Reviews.NamePlaceholder" xml:space="preserve">
+    <value>Vaše meno</value>
+  </data>
+  <data name="Artist.Reviews.ReviewLabel" xml:space="preserve">
+    <value>Hodnotenie</value>
+  </data>
+  <data name="Artist.Reviews.ReviewPlaceholder" xml:space="preserve">
+    <value>Napíšte vaše hodnotenie…</value>
+  </data>
+  <data name="Artist.Reviews.Submit" xml:space="preserve">
+    <value>Odoslať</value>
+  </data>
+  <data name="Artist.Reviews.ErrorName" xml:space="preserve">
+    <value>Zadajte prosím meno.</value>
+  </data>
+  <data name="Artist.Reviews.ErrorText" xml:space="preserve">
+    <value>Zadajte prosím hodnotenie.</value>
+  </data>
+  <data name="Artist.Reviews.ErrorSubmit" xml:space="preserve">
+    <value>Odoslanie hodnotenia zlyhalo. Skúste to prosím neskôr.</value>
+  </data>
+  <data name="Artist.AboutMe.Title" xml:space="preserve">
+    <value>Pedagóg a výtvarník</value>
+  </data>
+  <data name="Artist.AboutMe.PhotoAlt" xml:space="preserve">
+    <value>Portrét umelca</value>
+  </data>
+  <data name="Artist.AboutMe.Paragraph1" xml:space="preserve">
+    <value>V Bratislave žijem a pôsobím 10 rokov ako učiteľ výtvarného umenia na ZUŠ Vrbenského 1 v Rači. Učiteľ má v sebe čaro, premeniť zlú náladu na dobrú a tú dobrú na ešte lepšiu. Rozvíja našu fantáziu, slovnú zásobu, predstavivosť a v neposlednom rade nás vzdeláva a duševne obohacuje. </value>
+  </data>
+  <data name="Artist.AboutMe.Paragraph2" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="Artist.Reservation.Title" xml:space="preserve">
+    <value>Rezervácia hodiny</value>
+  </data>
+  <data name="Artist.Reservation.Description" xml:space="preserve">
+    <value>Vyberte si dostupný termín v kalendári nižšie a rezervujte si hodinu maľby. Individuálne hodiny sú prispôsobené vašej úrovni a cieľom — či začínate od nuly, alebo rozvíjate existujúcu prax.</value>
+  </data>
+  <data name="Artist.WorksGallery.Title" xml:space="preserve">
+    <value>Galéria prác</value>
+  </data>
+  <data name="Artist.Tutoring.Title" xml:space="preserve">
+    <value>Doučovanie</value>
+  </data>
+  <data name="Artist.Tutoring.Description" xml:space="preserve">
+    <value>Ponúkam prípravu na prijímacie skúšky na strednú a vysokú umeleckú školu. Príprava zahŕňa individuálny prístup ku každému žiakovi so zameraním na
+            výber umeleckého odboru. Zdokonaľovanie sa v jednotlivých technikách cez kresbu zátišia, portrétu a voľných autorských prác. Precízna príprava
+            umeleckého portfólia podľa požiadaviek a potrieb žiaka. Mojím cieľom je prostredníctvom hry s ceruzkou a experimentovania s farbami,
+            objaviť v každej príprave osobité prvky a preniesť ich na papier.</value>
+  </data>
+  <data name="Artist.Tutoring.StudentGallery" xml:space="preserve">
+    <value>Práce študentov</value>
+  </data>
+  <data name="Artist.MyWork.Title" xml:space="preserve">
+    <value>Moja práca</value>
+  </data>
+  <data name="Artist.MyWork.PhotoAlt" xml:space="preserve">
+    <value>Autorská grafika s pohľadom na časť mesta Gbely</value>
+  </data>
+  <data name="Artist.MyWork.Description" xml:space="preserve">
+    <value>Na autorskej grafike je pohľad na časť mesta Gbely, kde som vyrastala a prežila detstvo. Po ukončení základnej umeleckej školy v Gbeloch a následne v Senici, som sa rozhodla pokračovať v štúdiu na Súkromnej umeleckej škole dizajnu - odbor : grafický a priestorový dizajn. 
+    Následne som pokračovala v štúdiu na pedagogickej fakulte Univerzity Komenského v Bratislave - odbor : učiteľ výtvarného umenia. Záverom môjho štúdia bola rigorózna skúška - téma rigoróznej práce : Preferencia ilustrácií u detí predškolského veku.</value>
+  </data>
 </root>

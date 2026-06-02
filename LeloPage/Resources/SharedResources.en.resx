@@ -265,4 +265,72 @@
   <data name="Artist.Modal.NextFree" xml:space="preserve">
     <value>Next available:</value>
   </data>
+  <data name="Artist.Reviews.Header" xml:space="preserve">
+    <value>Reviews</value>
+  </data>
+  <data name="Artist.Reviews.NameLabel" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Artist.Reviews.NamePlaceholder" xml:space="preserve">
+    <value>Your name</value>
+  </data>
+  <data name="Artist.Reviews.ReviewLabel" xml:space="preserve">
+    <value>Review</value>
+  </data>
+  <data name="Artist.Reviews.ReviewPlaceholder" xml:space="preserve">
+    <value>Write your review…</value>
+  </data>
+  <data name="Artist.Reviews.Submit" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="Artist.Reviews.ErrorName" xml:space="preserve">
+    <value>Please enter your name.</value>
+  </data>
+  <data name="Artist.Reviews.ErrorText" xml:space="preserve">
+    <value>Please enter a review.</value>
+  </data>
+  <data name="Artist.Reviews.ErrorSubmit" xml:space="preserve">
+    <value>Failed to submit review. Please try again later.</value>
+  </data>
+  <data name="Artist.AboutMe.Title" xml:space="preserve">
+    <value>About Me</value>
+  </data>
+  <data name="Artist.AboutMe.PhotoAlt" xml:space="preserve">
+    <value>Artist portrait</value>
+  </data>
+  <data name="Artist.AboutMe.Paragraph1" xml:space="preserve">
+    <value>I am a painter and visual artist with a degree in Fine Arts, specialising in painting and printmaking. My artistic journey has led me through classical academic training and into a personal practice that bridges traditional technique with contemporary expression.</value>
+  </data>
+  <data name="Artist.AboutMe.Paragraph2" xml:space="preserve">
+    <value>I work primarily with oil and acrylic on canvas, as well as linocut and woodcut printmaking. Alongside my own creative work I offer painting lessons for students and adults of all levels — book a session using the calendar below.</value>
+  </data>
+  <data name="Artist.Reservation.Title" xml:space="preserve">
+    <value>Book a Session</value>
+  </data>
+  <data name="Artist.Reservation.Description" xml:space="preserve">
+    <value>Select an available date from the calendar below to book a painting lesson. Individual sessions are tailored to your skill level and goals — whether you are just starting out or developing an existing practice.</value>
+  </data>
+  <data name="Artist.WorksGallery.Title" xml:space="preserve">
+    <value>Works Gallery</value>
+  </data>
+  <data name="Artist.Tutoring.Title" xml:space="preserve">
+    <value>Tutoring</value>
+  </data>
+  <data name="Artist.Tutoring.Description" xml:space="preserve">
+    <value>I offer art painting lessons for students and adults of all skill levels. Whether you are picking up a brush for the first time or looking to refine your technique, sessions are tailored to your individual goals. We explore drawing, composition, colour theory, and painting in a relaxed and inspiring environment.</value>
+  </data>
+  <data name="Artist.Tutoring.StudentGallery" xml:space="preserve">
+    <value>Student Works</value>
+  </data>
+  <data name="Artist.MyWork.Title" xml:space="preserve">
+    <value>My Work</value>
+  </data>
+  <data name="Artist.MyWork.PhotoAlt" xml:space="preserve">
+    <value>Author's graphic artwork showing part of the town of Gbely</value>
+  </data>
+  <data name="Artist.MyWork.Description" xml:space="preserve">
+    <value>This author's graphic artwork shows a view of part of the town of Gbely, where I grew up and spent my childhood.
+After finishing primary art school in Gbely and later in Senica, I decided to continue my studies at the Private Art and Design School - specialization: graphic and spatial design. I then continued my studies at the Faculty of Education of Comenius University in Bratislava - specialization: teaching visual arts.
+The conclusion of my studies was a rigorous examination - the topic of my rigorous thesis: Preference of illustrations among preschool children.</value>
+  </data>
 </root>

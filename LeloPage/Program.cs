@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Microsoft.Extensions.Configuration;
 using LeloPage;
 using LeloPage.Services;
 using System.Globalization;
@@ -9,6 +10,9 @@ builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+
+builder.Services.AddScoped<ReviewService>();
+builder.Services.AddScoped<ReservationService>();
 
 // Add localization services
 builder.Services.AddLocalization();
@@ -26,4 +30,3 @@ Console.WriteLine($"Current Culture: {CultureInfo.CurrentCulture.Name}");
 Console.WriteLine($"Current UI Culture: {CultureInfo.CurrentUICulture.Name}");
 
 await host.RunAsync();
-

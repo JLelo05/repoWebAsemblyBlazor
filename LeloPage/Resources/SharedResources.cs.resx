@@ -223,4 +223,76 @@
   <data name="Artist.Modal.NextFree" xml:space="preserve">
     <value>Následující volné:</value>
   </data>
+  <data name="Artist.Reviews.Header" xml:space="preserve">
+    <value>Hodnocení</value>
+  </data>
+  <data name="Artist.Reviews.NameLabel" xml:space="preserve">
+    <value>Jméno</value>
+  </data>
+  <data name="Artist.Reviews.NamePlaceholder" xml:space="preserve">
+    <value>Vaše jméno</value>
+  </data>
+  <data name="Artist.Reviews.ReviewLabel" xml:space="preserve">
+    <value>Hodnocení</value>
+  </data>
+  <data name="Artist.Reviews.ReviewPlaceholder" xml:space="preserve">
+    <value>Napište vaše hodnocení…</value>
+  </data>
+  <data name="Artist.Reviews.Submit" xml:space="preserve">
+    <value>Odeslat</value>
+  </data>
+  <data name="Artist.Reviews.ErrorName" xml:space="preserve">
+    <value>Prosím zadejte jméno.</value>
+  </data>
+  <data name="Artist.Reviews.ErrorText" xml:space="preserve">
+    <value>Prosím zadejte hodnocení.</value>
+  </data>
+  <data name="Artist.Reviews.ErrorSubmit" xml:space="preserve">
+    <value>Odeslání hodnocení se nezdařilo. Zkuste to prosím znovu.</value>
+  </data>
+  <data name="Artist.AboutMe.Title" xml:space="preserve">
+    <value>O mně</value>
+  </data>
+  <data name="Artist.AboutMe.PhotoAlt" xml:space="preserve">
+    <value>Portrét umělce</value>
+  </data>
+  <data name="Artist.AboutMe.Paragraph1" xml:space="preserve">
+    <value>Jsem malíř a vizuální umělec s diplomem z výtvarného umění se zaměřením na malbu a grafiku. Moje umělecká cesta mě provedla klasickým akademickým vzděláním a vyústila v osobní tvorbu propojující tradiční techniku se současným výrazem.</value>
+  </data>
+  <data name="Artist.AboutMe.Paragraph2" xml:space="preserve">
+    <value>Pracuji především s olejem a akrylem na plátně a také s linorytem a dřevorytem. Vedle vlastní tvorby nabízím hodiny malby pro studenty a dospělé všech úrovní — rezervujte si termín pomocí kalendáře níže.</value>
+  </data>
+  <data name="Artist.Reservation.Title" xml:space="preserve">
+    <value>Rezervace hodiny</value>
+  </data>
+  <data name="Artist.Reservation.Description" xml:space="preserve">
+    <value>Vyberte si dostupný termín v kalendáři níže a rezervujte si hodinu malby. Individuální hodiny jsou přizpůsobeny vaší úrovni a cílům — ať začínáte od základů, nebo rozvíjíte stávající praxi.</value>
+  </data>
+  <data name="Artist.WorksGallery.Title" xml:space="preserve">
+    <value>Galerie prací</value>
+  </data>
+  <data name="Artist.Tutoring.Title" xml:space="preserve">
+    <value>Výuka</value>
+  </data>
+  <data name="Artist.Tutoring.Description" xml:space="preserve">
+    <value>Nabízím hodiny malby pro studenty a dospělé všech úrovní. Ať saháte po štětci poprvé, nebo chcete zdokonalit svou techniku, hodiny jsou přizpůsobeny vašim individuálním cílům. Společně objevujeme kresbu, kompozici, nauku o barvách a malbu v uvolněném a inspirujícím prostředí.</value>
+  </data>
+  <data name="Artist.Tutoring.StudentGallery" xml:space="preserve">
+    <value>Práce studentů</value>
+  </data>
+  <data name="Artist.MyWork.Title" xml:space="preserve">
+    <value>Moje práce</value>
+  </data>
+  <data name="Artist.MyWork.PhotoAlt" xml:space="preserve">
+    <value>Autorská grafika s pohledem na část města Gbely</value>
+  </data>
+  <data name="Artist.MyWork.Description" xml:space="preserve">
+    <value>Na autorské grafice je pohled na část města Gbely, kde jsem vyrůstala a prožila dětství.
+Po ukončení základní umělecké školy v Gbelech a následně v Senici jsem se rozhodla
+pokračovat ve studiu na Soukromé umělecké škole designu - obor: grafický
+a prostorový design. Následně jsem pokračovala ve studiu na pedagogické
+fakultě Univerzity Komenského v Bratislavě - obor: učitelství výtvarného umění.
+Závěrem mého studia byla rigorózní zkouška - téma rigorózní práce: Preference
+ilustrací u dětí předškolního věku.</value>
+  </data>
 </root>

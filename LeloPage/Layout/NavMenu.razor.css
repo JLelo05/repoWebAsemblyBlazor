@@ -1,3 +1,25 @@
+.topbar-navbar {
+    position: relative;
+}
+
+.left-nav-group {
+    gap: 0.35rem;
+}
+
+.header-page-title {
+    display: inline-flex;
+    align-items: center;
+    height: 3rem;
+    color: #e5e7eb;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.03em;
+    margin-right: 0.25rem;
+    padding: 0 0.35rem;
+    white-space: nowrap;
+}
+
 .navbar-toggler {
     background-color: rgba(255, 255, 255, 0.1);
 }
@@ -22,6 +44,13 @@
     margin-right: 0.75rem;
   /*  top: 5px;*/
     background-size: cover;
+}
+
+.artist-nav-icon {
+    display: block;
+    width: 1.25rem;
+    height: 1.25rem;
+    object-fit: contain;
 }
 
 .bi-house-door-fill-nav-menu {
@@ -78,6 +107,10 @@
     }
 
     .nav-item ::deep .bi {
+        margin-right: 0;
+    }
+
+    .nav-item ::deep .artist-nav-icon {
         margin-right: 0;
     }
 
