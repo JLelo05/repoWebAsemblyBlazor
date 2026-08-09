@@ -262,6 +262,14 @@
   <data name="Artist.AboutMe.Paragraph2" xml:space="preserve">
     <value>Pracuji především s olejem a akrylem na plátně a také s linorytem a dřevorytem. Vedle vlastní tvorby nabízím hodiny malby pro studenty a dospělé všech úrovní — rezervujte si termín pomocí kalendáře níže.</value>
   </data>
+  <data name="Artist.AboutMe.QuoteLeft" xml:space="preserve">
+    <value>Bez velké vůle neexistují velké talenty.
+[Honoré de Balzac]</value>
+  </data>
+  <data name="Artist.AboutMe.QuoteRight" xml:space="preserve">
+    <value>Neustálá práce je zákonem jak pro umění, tak pro život.
+[Honoré de Balzac]</value>
+  </data>
   <data name="Artist.Reservation.Title" xml:space="preserve">
     <value>Rezervace hodiny</value>
   </data>
@@ -279,6 +287,18 @@
   </data>
   <data name="Artist.Tutoring.StudentGallery" xml:space="preserve">
     <value>Práce studentů</value>
+  </data>
+  <data name="Artist.DiplomaWork.Title" xml:space="preserve">
+    <value>Diplomová práce</value>
+  </data>
+  <data name="Artist.DiplomaWork.GalleryTitle" xml:space="preserve">
+    <value>Diplomová práce</value>
+  </data>
+  <data name="Artist.DiplomaWork.Description" xml:space="preserve">
+    <value>Neodmyslitelnou součástí každé knižní vazby je právě ilustrace. Kniha bez ilustrace by nebyla knihou, protože dotváří celkovou knižní a uměleckou atmosféru a tím nabízí každému čtenáři osobitý umělecký zážitek.</value>
+  </data>
+  <data name="Artist.DiplomaWork.PhotoAlt" xml:space="preserve">
+    <value>Fotografie diplomové práce</value>
   </data>
   <data name="Artist.MyWork.Title" xml:space="preserve">
     <value>Moje práce</value>

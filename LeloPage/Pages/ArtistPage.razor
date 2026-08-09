@@ -20,11 +20,19 @@
 
         <!-- About me section -->
         <div class="about-section">
-            <img class="about-photo" src="images/artist-portrait.jpg" alt="@Localizer["Artist.AboutMe.PhotoAlt"]" />
+            <div class="about-photo-block">
+                <img class="about-photo" src="images/artist-portrait.jpg" alt="@Localizer["Artist.AboutMe.PhotoAlt"]" />
+                <p class="about-photo-name">PaedDr.Barbora Leľo</p>
+                <p class="about-photo-name" style="font-size: 90%;"><a href="mailto:barbora@lelopage.eu">barbora@lelopage.eu</a></p>
+            </div>
             <div class="about-text">
                 <h2 class="about-title">@Localizer["Artist.AboutMe.Title"]</h2>
                 <p class="page-description">@Localizer["Artist.AboutMe.Paragraph1"]</p>
                 <p class="page-description">@Localizer["Artist.AboutMe.Paragraph2"]</p>
+                <div class="about-quotes">
+                    <p class="about-quote">@Localizer["Artist.AboutMe.QuoteLeft"]</p>
+                    <p class="about-quote">@Localizer["Artist.AboutMe.QuoteRight"]</p>
+                </div>
             </div>
         </div>
 
@@ -52,13 +60,38 @@
             </div>
         </div>
 
+        <!-- Diploma work section -->
+        <div class="diploma-work-section">
+            <h2 class="section-title">@Localizer["Artist.DiplomaWork.Title"]</h2>
+            <p class="page-description">@Localizer["Artist.DiplomaWork.Description"]</p>
+
+            <div class="diploma-gallery-section">
+                @*<h3 class="gallery-title">@Localizer["Artist.DiplomaWork.GalleryTitle"]</h3>*@
+                @if (_diplomaImages.Count > 0)
+                {
+                    <div class="gallery-strip-wrapper">
+                        <div class="gallery-strip">
+                            @foreach (var img in _diplomaImages)
+                            {
+                                <img class="gallery-thumb" src="images/works/diplomaWork/@img" alt="@Localizer["Artist.DiplomaWork.PhotoAlt"]" @onclick="@(() => OpenLightbox("diplomaWork/" + img))" />
+                            }
+                            @foreach (var img in _diplomaImages)
+                            {
+                                <img class="gallery-thumb" src="images/works/diplomaWork/@img" alt="@Localizer["Artist.DiplomaWork.PhotoAlt"]" @onclick="@(() => OpenLightbox("diplomaWork/" + img))" />
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
         <!-- Tutoring section -->
         <div class="tutoring-section">
             <h2 class="section-title">@Localizer["Artist.Tutoring.Title"]</h2>
             <p class="page-description">@Localizer["Artist.Tutoring.Description"]</p>
 
             <div class="student-gallery-section">
-                <h3 class="gallery-title">@Localizer["Artist.Tutoring.StudentGallery"]</h3>
+              <h3 class="gallery-title">@Localizer["Artist.Tutoring.StudentGallery"]</h3>
                 @if (_studentImages.Count > 0)
                 {
                     <div class="gallery-strip-wrapper">
@@ -278,6 +311,7 @@
 
     private List<string> _galleryImages = new();
     private string? _lightboxImage;
+    private List<string> _diplomaImages = new();
     private List<string> _studentImages = new();
     private string? _studentLightboxImage;
 
@@ -305,6 +339,12 @@
         {
             var studentImages = await Http.GetFromJsonAsync<List<string>>("images/studentWork/manifest.json");
             if (studentImages != null) _studentImages = studentImages;
+        }
+        catch { }
+        try
+        {
+            var diplomaImages = await Http.GetFromJsonAsync<List<string>>("images/works/diplomaWork/manifest.json");
+            if (diplomaImages != null) _diplomaImages = diplomaImages;
         }
         catch { }
     }

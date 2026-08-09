@@ -304,6 +304,14 @@
   <data name="Artist.AboutMe.Paragraph2" xml:space="preserve">
     <value>I work primarily with oil and acrylic on canvas, as well as linocut and woodcut printmaking. Alongside my own creative work I offer painting lessons for students and adults of all levels — book a session using the calendar below.</value>
   </data>
+  <data name="Artist.AboutMe.QuoteLeft" xml:space="preserve">
+    <value>Without great will, there are no great talents.
+[Honoré de Balzac]</value>
+  </data>
+  <data name="Artist.AboutMe.QuoteRight" xml:space="preserve">
+    <value>Constant work is the law both for art and for life.
+[Honoré de Balzac]</value>
+  </data>
   <data name="Artist.Reservation.Title" xml:space="preserve">
     <value>Book a Session</value>
   </data>
@@ -321,6 +329,18 @@
   </data>
   <data name="Artist.Tutoring.StudentGallery" xml:space="preserve">
     <value>Student Works</value>
+  </data>
+  <data name="Artist.DiplomaWork.Title" xml:space="preserve">
+    <value>Diploma Thesis</value>
+  </data>
+  <data name="Artist.DiplomaWork.GalleryTitle" xml:space="preserve">
+    <value>Diploma Thesis</value>
+  </data>
+  <data name="Artist.DiplomaWork.Description" xml:space="preserve">
+    <value>An illustration is an essential part of every bookbinding. A book without illustration would not truly be a book, because it shapes the overall literary and artistic atmosphere and offers every reader a unique artistic experience.</value>
+  </data>
+  <data name="Artist.DiplomaWork.PhotoAlt" xml:space="preserve">
+    <value>Diploma work photo</value>
   </data>
   <data name="Artist.MyWork.Title" xml:space="preserve">
     <value>My Work</value>

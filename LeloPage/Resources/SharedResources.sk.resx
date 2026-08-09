@@ -266,7 +266,7 @@
     <value>Nasledujúce voľné:</value>
   </data>
   <data name="Artist.Reviews.Header" xml:space="preserve">
-    <value>Hodnotenia</value>
+    <value>Recenzie</value>
   </data>
   <data name="Artist.Reviews.NameLabel" xml:space="preserve">
     <value>Meno</value>
@@ -299,16 +299,24 @@
     <value>Portrét umelca</value>
   </data>
   <data name="Artist.AboutMe.Paragraph1" xml:space="preserve">
-    <value>V Bratislave žijem a pôsobím 10 rokov ako učiteľ výtvarného umenia na ZUŠ Vrbenského 1 v Rači. Učiteľ má v sebe čaro, premeniť zlú náladu na dobrú a tú dobrú na ešte lepšiu. Rozvíja našu fantáziu, slovnú zásobu, predstavivosť a v neposlednom rade nás vzdeláva a duševne obohacuje. </value>
+    <value>V Bratislave žijem a pôsobím 10 rokov ako učiteľ výtvarného umenia na ZUŠ Vrbenského 1 v Rači. </value>
   </data>
   <data name="Artist.AboutMe.Paragraph2" xml:space="preserve">
-    <value></value>
+    <value>    Učiteľ má v sebe čaro, premeniť zlú náladu na dobrú a tú dobrú na ešte lepšiu. Rozvíja našu fantáziu, slovnú zásobu, predstavivosť a v neposlednom rade nás vzdeláva a duševne obohacuje.</value>
+  </data>
+  <data name="Artist.AboutMe.QuoteLeft" xml:space="preserve">
+    <value>Bez velké vůle neexistují velké talenty.
+[Honoré de Balzac]</value>
+  </data>
+  <data name="Artist.AboutMe.QuoteRight" xml:space="preserve">
+    <value>Neustála práca je zákonom ako pre umenie, tak pre život.
+[Honoré de Balzac]</value>
   </data>
   <data name="Artist.Reservation.Title" xml:space="preserve">
     <value>Rezervácia hodiny</value>
   </data>
   <data name="Artist.Reservation.Description" xml:space="preserve">
-    <value>Vyberte si dostupný termín v kalendári nižšie a rezervujte si hodinu maľby. Individuálne hodiny sú prispôsobené vašej úrovni a cieľom — či začínate od nuly, alebo rozvíjate existujúcu prax.</value>
+    <value>Vyberte si dostupný termín v kalendári nižšie a rezervujte si hodinu. Prípadne ma neváhajte kontaktovať. Rada zodpoviem Vaše otázky.</value>
   </data>
   <data name="Artist.WorksGallery.Title" xml:space="preserve">
     <value>Galéria prác</value>
@@ -325,6 +333,18 @@
   <data name="Artist.Tutoring.StudentGallery" xml:space="preserve">
     <value>Práce študentov</value>
   </data>
+  <data name="Artist.DiplomaWork.Title" xml:space="preserve">
+    <value>Diplomová práca</value>
+  </data>
+  <data name="Artist.DiplomaWork.GalleryTitle" xml:space="preserve">
+    <value>Diplomová práca</value>
+  </data>
+  <data name="Artist.DiplomaWork.Description" xml:space="preserve">
+    <value>Neodmysliteľnou súčasťou každej knižnej väzby je práve ilustrácia. Kniha bez ilustrácie, by nebola knihou, pretože dotvára celkovú knižnú a umeleckú atmosféru a tým ponúka každému čitateľovi osobitý umelecký zážitok.</value>
+  </data>
+  <data name="Artist.DiplomaWork.PhotoAlt" xml:space="preserve">
+    <value>Fotografia diplomovej práce</value>
+  </data>
   <data name="Artist.MyWork.Title" xml:space="preserve">
     <value>Moja práca</value>
   </data>
@@ -332,7 +352,7 @@
     <value>Autorská grafika s pohľadom na časť mesta Gbely</value>
   </data>
   <data name="Artist.MyWork.Description" xml:space="preserve">
-    <value>Na autorskej grafike je pohľad na časť mesta Gbely, kde som vyrastala a prežila detstvo. Po ukončení základnej umeleckej školy v Gbeloch a následne v Senici, som sa rozhodla pokračovať v štúdiu na Súkromnej umeleckej škole dizajnu - odbor : grafický a priestorový dizajn. 
+    <value>Na autorskej grafike je pohľad na časť mesta Gbely, kde som vyrastala a prežila detstvo. Po ukončení základnej umeleckej školy v Gbeloch a následne v Senici, som sa rozhodla pokračovať v štúdiu na Súkromnej umeleckej škole dizajnu v Bratislave - odbor : grafický a priestorový dizajn. 
     Následne som pokračovala v štúdiu na pedagogickej fakulte Univerzity Komenského v Bratislave - odbor : učiteľ výtvarného umenia. Záverom môjho štúdia bola rigorózna skúška - téma rigoróznej práce : Preferencia ilustrácií u detí predškolského veku.</value>
   </data>
 </root>
