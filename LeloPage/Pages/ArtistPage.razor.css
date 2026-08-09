@@ -1,0 +1,773 @@
+/* ── Page layout: two columns ─────────────────────────────── */
+.page-layout {
+    display: flex;
+    align-items: stretch;
+    gap: 2rem;
+    padding: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main-column {
+    flex: 2;
+    min-width: 0;
+}
+
+.reviews-column {
+    flex: 1;
+    min-width: 0;
+    border-left: 1px solid #e0e0e0;
+    padding-left: 2rem;
+}
+
+/* ── About me section ─────────────────────────────────────── */
+.about-section {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+}
+
+.about-photo-block {
+    width: 180px;
+    min-width: 180px;
+}
+
+.about-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.about-photo-name {
+    margin: 0.5rem 0 0;
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-quotes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 0.75rem;
+}
+
+.about-quote {
+    margin: 0;
+    padding: 0.75rem 0.9rem;
+    border-radius: 6px;
+    font-style: italic;
+    white-space: pre-line;
+}
+
+/* ── My work section ─────────────────────────────────────── */
+.my-work-section {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.my-work-title {
+    margin-bottom: 1rem;
+}
+
+.my-work-photo {
+    display: block;
+    margin: 0 auto 1rem;
+    width: 30%;
+    min-width: 140px;
+    max-width: 220px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.my-work-section .page-description {
+    white-space: pre-line;
+}
+
+/* ── Works gallery ────────────────────────────────────────── */
+.gallery-section {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e0e0e0;
+    overflow: hidden;
+}
+
+/* ── Diploma work section ─────────────────────────────────── */
+.diploma-work-section {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.diploma-work-section .page-description {
+    white-space: pre-line;
+}
+
+.gallery-strip-wrapper {
+    overflow: hidden;
+    width: 100%;
+    cursor: grab;
+}
+
+.gallery-strip {
+    display: flex;
+    gap: 0.75rem;
+    width: max-content;
+    animation: gallery-scroll 18s linear infinite;
+}
+
+.gallery-strip:hover {
+    animation-play-state: paused;
+}
+
+@keyframes gallery-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.gallery-thumb {
+    height: 130px;
+    width: auto;
+    border-radius: 6px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+    flex-shrink: 0;
+}
+
+.gallery-thumb:hover {
+    transform: scale(1.06);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+/* ── Lightbox ─────────────────────────────────────────────── */
+.lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.88);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.lightbox-box {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+.lightbox-img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 8px;
+    object-fit: contain;
+    display: block;
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    background: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 2.2rem;
+    height: 2.2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+    z-index: 1;
+    transition: background 0.15s;
+}
+
+.lightbox-close:hover {
+    background: #f0f0f0;
+}
+
+/* ── Reservation section ──────────────────────────────────── */
+.reservation-section {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* ── Calendar wrapper ─────────────────────────────────────── */
+.calendar-wrapper {
+    font-family: inherit;
+}
+
+.calendar-wrapper h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* ── Month navigation header ──────────────────────────────── */
+.cal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+}
+
+.cal-month-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.cal-nav {
+    background: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.2rem 0.7rem;
+    font-size: 1.4rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: background 0.15s;
+}
+
+.cal-nav:hover {
+    background: #f0f0f0;
+}
+
+/* ── Calendar grid (7 columns) ────────────────────────────── */
+.cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+}
+
+.cal-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    user-select: none;
+}
+
+/* Day-of-week headers */
+.cal-dow {
+    font-weight: 700;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    color: #888;
+    height: 28px;
+}
+
+/* Empty filler cells */
+.cal-empty {
+    background: transparent;
+}
+
+/* Clickable day cells */
+.cal-day {
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.cal-day:hover:not(.cal-past) {
+    background: #e8f0fe;
+    border-color: #4a80f0;
+}
+
+.cal-today {
+ /* Selected day */
+   border-color: #4a80f0 !important;
+    font-weight: 700;
+    color: /* Past days — greyed out, not clickable */
+#1a56db;
+}
+
+/* Selected day */
+.cal-selected {
+    background: #4a80f0 !important;
+ /* Past days — greyed out, not clickable */
+   color: #fff !important;
+    border-color: #2c5ecf !important;
+    font-weight: 700;
+}
+
+/* Past days — greyed out, not clickable */
+.cal-past {
+    color: #bbb;
+    cursor: default;
+}
+
+/* ── Selected-day action bar ──────────────────────────────── */
+.cal-action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding: 0.6rem 0.8rem;
+    background: #e0e0e0;
+    border: 1px solid #bdbdbd;
+    border-radius: 8px;
+    color: #424242;
+}
+
+.btn-register {
+    background: #4a80f0;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.btn-register:hover {
+    background: #2c5ecf;
+}
+
+/* ── Saved registrations list ─────────────────────────────── */
+.registrations-list {
+    margin-top: 1.5rem;
+}
+
+.registrations-list h4 {
+    margin-bottom: 0.5rem;
+}
+
+.registrations-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.registrations-list li {
+    padding: 0.35rem 0.6rem;
+    border-bottom: 1px solid #eee;
+    font-family: monospace;
+    font-size: 0.95rem;
+}
+
+/* ── Modal overlay ────────────────────────────────────────── */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* ── Modal box ────────────────────────────────────────────── */
+.modal-box {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1.8rem 2rem;
+    min-width: 300px;
+    max-width: 380px;
+    width: 90%;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.modal-box h4 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+}
+
+.modal-date {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #4a80f0;
+    margin-bottom: 1rem;
+}
+
+.modal-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-bottom: 1rem;
+}
+
+.modal-field label {
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.modal-field input {
+    padding: 0.4rem 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.modal-field input[type="number"] {
+    width: 6rem;
+}
+
+.modal-error {
+    color: #d32f2f;
+    font-size: 0.85rem;
+    margin: 0 0 0.75rem;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: flex-end;
+}
+
+.btn-save {
+    background: #4a80f0;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.45rem 1.1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.btn-save:hover {
+    background: #2c5ecf;
+}
+
+.btn-cancel {
+    background: none;
+    color: #555;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 0.45rem 1.1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.btn-cancel:hover {
+    background: #f5f5f5;
+}
+
+/* ── Info banner ──────────────────────────────────────────── */
+.cal-info-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0.75rem 0 0;
+    padding: 0.6rem 0.8rem;
+    background: #e8f5e9;
+    border: 1px solid #a5d6a7;
+    border-radius: 8px;
+    color: #2e7d32;
+    font-size: 0.9rem;
+}
+
+.btn-dismiss {
+    background: none;
+    border: none;
+    color: #2e7d32;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0 0.2rem;
+    line-height: 1;
+    opacity: 0.7;
+}
+
+.btn-dismiss:hover {
+    opacity: 1;
+}
+
+/* ── Already-booked list inside modal ─────────────────────── */
+.modal-booked {
+    background: #fff8e1;
+    border: 1px solid #ffe082;
+    border-radius: 6px;
+    padding: 0.5rem 0.7rem;
+    margin-bottom: 0.9rem;
+}
+
+.modal-booked-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #795548;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.modal-booked-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+
+.modal-booked-list li {
+    background: #ffcc02;
+    color: #333;
+    border-radius: 4px;
+    padding: 0.15rem 0.5rem;
+    font-family: monospace;
+    font-size: 0.85rem;
+}
+
+/* ── Tutoring section ─────────────────────────────────────── */
+.tutoring-section {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.section-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0 0 0.75rem;
+}
+
+.student-gallery-section {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+}
+
+/* ── Reviews column ───────────────────────────────────────── */
+.reviews-header {
+    margin: 0 0 1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/* ── Add review form ──────────────────────────────────────── */
+.review-form {
+    background: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.review-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-bottom: 0.85rem;
+}
+
+.review-field label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #555;
+}
+
+.review-field input,
+.review-field textarea {
+    padding: 0.4rem 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    width: 100%;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+.review-field input:focus,
+.review-field textarea:focus {
+    outline: none;
+    border-color: #4a80f0;
+}
+
+.review-error {
+    color: #d32f2f;
+    font-size: 0.85rem;
+    margin: 0 0 0.6rem;
+}
+
+.btn-submit-review {
+    background: #4a80f0;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.45rem 1.2rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.15s;
+    width: 100%;
+}
+
+.btn-submit-review:hover {
+    background: #2c5ecf;
+}
+
+/* ── Reviews list ─────────────────────────────────────────── */
+.reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.review-item {
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.review-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.4rem;
+}
+
+.review-author {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.review-date {
+    font-size: 0.78rem;
+    color: #999;
+}
+
+.review-text {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #333;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .page-layout {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+
+    .reviews-column {
+        border-left: none;
+        border-top: 1px solid #e0e0e0;
+        padding-left: 0;
+        padding-top: 1.5rem;
+    }
+
+    .about-section {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .about-quotes {
+        grid-template-columns: 1fr;
+    }
+
+    .about-photo {
+        width: min(100%, 260px);
+        min-width: 0;
+        align-self: center;
+    }
+
+    .gallery-thumb {
+        height: 100px;
+    }
+
+    .cal-header {
+        gap: 0.75rem;
+    }
+
+    .cal-month-title {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .cal-cell {
+        height: 38px;
+        font-size: 0.85rem;
+    }
+
+    .cal-dow {
+        font-size: 0.68rem;
+        height: 24px;
+    }
+
+    .cal-action {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+    }
+
+    .btn-register {
+        width: 100%;
+    }
+
+    .cal-info-banner {
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .modal-box {
+        padding: 1.25rem;
+        min-width: 0;
+        width: calc(100vw - 1.5rem);
+        max-width: 420px;
+    }
+
+    .modal-actions {
+        flex-direction: column;
+    }
+
+    .btn-save,
+    .btn-cancel {
+        width: 100%;
+    }
+
+    .review-item-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-layout {
+        padding: 0.75rem;
+    }
+
+    .section-title,
+    .about-title,
+    .reviews-header {
+        font-size: 1.15rem;
+    }
+
+    .gallery-thumb {
+        height: 88px;
+    }
+
+    .cal-nav {
+        padding: 0.2rem 0.55rem;
+        font-size: 1.15rem;
+    }
+
+    .cal-cell {
+        height: 34px;
+        font-size: 0.8rem;
+    }
+
+    .cal-dow {
+        font-size: 0.62rem;
+    }
+}

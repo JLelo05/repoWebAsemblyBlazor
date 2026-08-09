@@ -1,0 +1,22 @@
+.language-switcher {
+    display: inline-block;
+}
+
+.language-switcher select {
+    min-width: 120px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0.25rem 0.5rem;
+}
+
+.language-switcher select:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.5);
+    outline: none;
+}
+
+.language-switcher option {
+    background-color: #1a1a1a;
+    color: white;
+}

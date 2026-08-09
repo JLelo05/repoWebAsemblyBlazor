@@ -1,25 +1,28 @@
 ﻿@page "/weather"
 @inject HttpClient Http
+@inject IStringLocalizer<SharedResources> Localizer
+@inject CultureService CultureService
+@implements IDisposable
 
-<PageTitle>Weather</PageTitle>
+<PageTitle>@Localizer["Weather.PageTitle"]</PageTitle>
 
-<h1>Weather</h1>
+<h1>@Localizer["Weather.Title"]</h1>
 
-<p>This component demonstrates fetching data from the server.</p>
+<p>@Localizer["Weather.Description"]</p>
 
 @if (forecasts == null)
 {
-    <p><em>Loading...</em></p>
+    <p><em>@Localizer["Weather.Loading"]</em></p>
 }
 else
 {
     <table class="table">
         <thead>
             <tr>
-                <th>Date</th>
-                <th aria-label="Temperature in Celsius">Temp. (C)</th>
-                <th aria-label="Temperature in Farenheit">Temp. (F)</th>
-                <th>Summary</th>
+                <th>@Localizer["Weather.Date"]</th>
+                <th aria-label="@Localizer["Weather.TempCelsiusLabel"]">@Localizer["Weather.TempC"]</th>
+                <th aria-label="@Localizer["Weather.TempFahrenheitLabel"]">@Localizer["Weather.TempF"]</th>
+                <th>@Localizer["Weather.Summary"]</th>
             </tr>
         </thead>
         <tbody>
@@ -41,7 +44,13 @@ else
 
     protected override async Task OnInitializedAsync()
     {
+        CultureService.OnCultureChanged += StateHasChanged;
         forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
+    }
+
+    public void Dispose()
+    {
+        CultureService.OnCultureChanged -= StateHasChanged;
     }
 
     public class WeatherForecast

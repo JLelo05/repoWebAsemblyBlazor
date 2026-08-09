@@ -1,187 +1,106 @@
-.page {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    padding-top: 3.5rem; /* Adjust if your topbar is taller */
-    background: #181a1b;
-    color: #e0e0e0;
-    min-height: 100vh;
+/* --- Dark Theme Variables --- */
+.dark-theme {
+    --background-color: #121212; /* Page background */
+    --surface-color: #1e1e1e; /* Main panels and cards */
+    --topbar-color: #1f2937; /* Slightly lighter dark for header */
+    --text-color: #e5e7eb; /* Main readable text */
+    --text-muted: #9ca3af; /* For secondary/less important text */
+    --accent-color: #2563eb; /* Blue accent (links, highlights) */
+    --hover-color: #374151; /* Hovered item background */
+    --shadow-color: rgba(0, 0, 0, 0.6); /* Subtle soft shadow in dark mode */
 }
 
+/* --- Root Page Layout --- */
+.page {
+    display: flex; /* Stack topbar + main vertically */
+    flex-direction: column; /* Top to bottom layout */
+    min-height: 100vh; /* Fill the whole viewport */
+    background-color: var(--background-color); /* Use dark background */
+    color: var(--text-color); /* Apply global text color */
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* Clean modern font */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth color changes */
+}
+
+/* --- Top Navigation Bar --- */
+.topbar {
+    background-color: var(--topbar-color); /* Slightly lighter dark background */
+    color: var(--text-color); /* White text */
+    padding: 0.75rem 1.5rem; /* Vertical + horizontal spacing */
+    box-shadow: 0 2px 5px var(--shadow-color); /* Small shadow for depth */
+    z-index: 100; /* Stay on top of page */
+    position: sticky; /* Fixed when scrolling */
+    top: 0; /* Stick to top edge */
+    transition: background-color 0.3s ease; /* Smooth when color changes */
+}
+
+/* --- Deep styling for NavMenu (applies inside child component) --- */
+.topbar ::deep(nav) {
+    display: flex; /* Horizontal layout for nav items */
+    align-items: center; /* Vertically center items */
+    justify-content: flex-start; /* Space between logo and links */
+}
+
+/* --- Main Content Wrapper --- */
 main {
     flex: 1;
-    background: #23272b;
-    color: #e0e0e0;
-    flex: 1 1 auto;
     display: flex;
     flex-direction: column;
+    padding: 1.5rem 20px;
 }
 
-.topbar {
-    width: 100%;
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 100;
-    background: linear-gradient(90deg, #23272b 0%, #343a40 100%);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-}
-
-.sidebar {
-    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
-}
-
-.top-row {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: #23272b;
-    border-top: 1px solid #444;
-    border-bottom: none;
-    justify-content: flex-end;
-    height: auto;
-    min-height: 3.5rem;
-    display: flex;
-    align-items: center;
-    box-sizing: border-box;
-    padding-left: 0;
-    padding-right: 0;
-}
-
-    .top-row ::deep a, .top-row ::deep .btn-link {
-        white-space: nowrap;
-        margin-left: 1.5rem;
-        text-decoration: none;
-    }
-
-    .top-row ::deep a:hover, .top-row ::deep .btn-link:hover {
-        text-decoration: underline;
-    }
-
-    .top-row ::deep a:first-child {
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-@media (max-width: 640.98px) {
-    .top-row {
-        justify-content: space-between;
-    }
-
-    .top-row ::deep a, .top-row ::deep .btn-link {
-        margin-left: 0;
-    }
-}
-
-@media (min-width: 641px) {
-    .page {
-        flex-direction: row;
-    }
-
-    .sidebar {
-        width: 250px;
-        height: 100vh;
-        position: sticky;
-        top: 0;
-    }
-
-    .top-row {
-        position: sticky;
-        top: 0;
-        z-index: 1;
-    }
-
-    .top-row.auth ::deep a:first-child {
-        flex: 1;
-        text-align: right;
-        width: 0;
-    }
-
-    .top-row, article {
-        padding-left: 2rem !important;
-        padding-right: 1.5rem !important;
-    }
-}
-
+/* --- Main Content Box --- */
 .content {
+    background-color: var(--surface-color);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px var(--shadow-color);
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex: 1 1 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: stretch;
-    align-items: stretch;
-    min-height: 60vh;
-    box-sizing: border-box;
-    flex: 1 1 auto;
+    flex: 1;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-@media (max-width: 900px) {
+/* --- Hover effect for the main content box --- */
+.content:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7); /* Slightly stronger shadow */
+}
+
+/* --- Responsive design adjustments --- */
+@media (max-width: 768px) {
+    main {
+        padding: 1rem 20px;
+    }
+
     .content {
-        max-width: 100%;
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
+        padding: 1.25rem;
+    }
+
+    .topbar {
+        padding: 0.5rem 1rem;
     }
 }
 
-.topbar-navbar {
-    width: 100%;
-    background: linear-gradient(90deg, #222 0%, #444 100%);
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+/* --- NavMenu Links (inside topbar) --- */
+.topbar ::deep(a) {
+    color: var(--text-muted); /* Lighter gray text for inactive links */
+    text-decoration: none; /* No underline */
+    padding: 0.5rem 1rem; /* Add click area */
+    border-radius: 6px; /* Smooth rounded edges */
+    transition: background-color 0.2s ease, color 0.2s ease; /* Animate hover */
 }
 
-.topbar-navbar .nav {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1.5rem;
+/* --- Link hover effect --- */
+.topbar ::deep(a:hover) {
+    background-color: var(--hover-color); /* Slightly lighter background */
+    color: var(--text-color); /* Make text fully bright */
 }
 
-.topbar-navbar .nav-item {
-    padding: 0;
+/* --- Active (current) link --- */
+.topbar ::deep(a.active) {
+    background-color: var(--accent-color); /* Blue accent background */
+    color: #fff; /* White text */
 }
 
-.topbar-navbar .nav-link {
-    color: #eee;
-    background: none;
-    border: none;
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: background 0.2s, color 0.2s;
-    display: flex;
-    align-items: center;
-}
-
-.topbar-navbar .nav-link:hover,
-.topbar-navbar .nav-link.active {
-    background: #333;
-    color: #fff;
-}
-
-.topbar .nav-link {
-    color: #e0e0e0;
-    background: none;
-    border: none;
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: background 0.2s, color 0.2s;
-    display: flex;
-    align-items: center;
-}
-
-.topbar .nav-link:hover,
-.topbar .nav-link.active {
-    background: #343a40;
-    color: #fff;
-}
-
-.px-4 {
-    padding-left: 1.5rem !important;
-    padding-right: 1.5rem !important;
+/* --- Muted text for secondary information inside content --- */
+.content ::deep(.text-muted) {
+    color: var(--text-muted); /* Subtle gray tone */
 }

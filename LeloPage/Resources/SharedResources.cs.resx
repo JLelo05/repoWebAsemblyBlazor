@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" msdata:Ordinal="5" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Nav.Home" xml:space="preserve">
+    <value>Domů</value>
+  </data>
+  <data name="Nav.Counter" xml:space="preserve">
+    <value>Počítadlo</value>
+  </data>
+  <data name="Nav.Weather" xml:space="preserve">
+    <value>Počasí</value>
+  </data>
+  <data name="Nav.NavigationMenu" xml:space="preserve">
+    <value>Navigační menu</value>
+  </data>
+  <data name="Home.PageTitle" xml:space="preserve">
+    <value>Domů</value>
+  </data>
+  <data name="Home.HelloWorld" xml:space="preserve">
+    <value>Ahoj světe!</value>
+  </data>
+  <data name="Home.Welcome" xml:space="preserve">
+    <value>Vítejte ve vaší nové aplikaci.</value>
+  </data>
+  <data name="Counter.PageTitle" xml:space="preserve">
+    <value>Počítadlo</value>
+  </data>
+  <data name="Counter.Title" xml:space="preserve">
+    <value>Počítadlo</value>
+  </data>
+  <data name="Counter.CurrentCount" xml:space="preserve">
+    <value>Aktuální počet</value>
+  </data>
+  <data name="Counter.ClickMe" xml:space="preserve">
+    <value>Klikněte na mě</value>
+  </data>
+  <data name="Weather.PageTitle" xml:space="preserve">
+    <value>Počasí</value>
+  </data>
+  <data name="Weather.Title" xml:space="preserve">
+    <value>Počasí</value>
+  </data>
+  <data name="Weather.Description" xml:space="preserve">
+    <value>Tato komponenta demonstruje načítání dat ze serveru.</value>
+  </data>
+  <data name="Weather.Loading" xml:space="preserve">
+    <value>Načítám...</value>
+  </data>
+  <data name="Weather.Date" xml:space="preserve">
+    <value>Datum</value>
+  </data>
+  <data name="Weather.TempC" xml:space="preserve">
+    <value>Teplota (C)</value>
+  </data>
+  <data name="Weather.TempF" xml:space="preserve">
+    <value>Teplota (F)</value>
+  </data>
+  <data name="Weather.Summary" xml:space="preserve">
+    <value>Shrnutí</value>
+  </data>
+  <data name="Weather.TempCelsiusLabel" xml:space="preserve">
+    <value>Teplota ve stupních Celsia</value>
+  </data>
+  <data name="Weather.TempFahrenheitLabel" xml:space="preserve">
+    <value>Teplota ve stupních Fahrenheita</value>
+  </data>
+  <data name="NotFound.PageTitle" xml:space="preserve">
+    <value>Nenalezeno</value>
+  </data>
+  <data name="NotFound.Message" xml:space="preserve">
+    <value>Omlouváme se, na této adrese nic není.</value>
+  </data>
+  <data name="Error.UnhandledError" xml:space="preserve">
+    <value>Došlo k neošetřené chybě.</value>
+  </data>
+  <data name="Error.Reload" xml:space="preserve">
+    <value>Obnovit</value>
+  </data>
+  <data name="Language.English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="Language.Slovak" xml:space="preserve">
+    <value>Slovenčina</value>
+  </data>
+  <data name="Language.Czech" xml:space="preserve">
+    <value>Čeština</value>
+  </data>
+  <data name="Nav.Art" xml:space="preserve">
+    <value>Umění</value>
+  </data>
+  <data name="Nav.Artist" xml:space="preserve">
+    <value>Umělci</value>
+  </data>
+  <data name="Artist.PageTitle" xml:space="preserve">
+    <value>Umělci</value>
+  </data>
+  <data name="Artist.Title" xml:space="preserve">
+    <value>Umělci</value>
+  </data>
+  <data name="Artist.Description" xml:space="preserve">
+    <value>Prozkoumejte naši sbírku talentovaných umělců.</value>
+  </data>
+  <data name="Artist.FeaturedArtists" xml:space="preserve">
+    <value>Doporučení umělci</value>
+  </data>
+  <data name="Artist.Loading" xml:space="preserve">
+    <value>Načítám umělce...</value>
+  </data>
+  <data name="Artist.Calendar.Title" xml:space="preserve">
+    <value>Registrační kalendář</value>
+  </data>
+  <data name="Artist.Calendar.Selected" xml:space="preserve">
+    <value>Vybraný:</value>
+  </data>
+  <data name="Artist.Calendar.Register" xml:space="preserve">
+    <value>Registrovat</value>
+  </data>
+  <data name="Artist.Calendar.SavedTitle" xml:space="preserve">
+    <value>Uložené registrace</value>
+  </data>
+  <data name="Artist.Modal.Title" xml:space="preserve">
+    <value>Nová registrace</value>
+  </data>
+  <data name="Artist.Modal.TimeLabel" xml:space="preserve">
+    <value>Navrhovaný čas</value>
+  </data>
+  <data name="Artist.Modal.Save" xml:space="preserve">
+    <value>Uložit</value>
+  </data>
+  <data name="Artist.Modal.Cancel" xml:space="preserve">
+    <value>Zrušit</value>
+  </data>
+  <data name="Artist.Modal.ErrorTime" xml:space="preserve">
+    <value>Prosím zadejte čas.</value>
+  </data>
+  <data name="Artist.Modal.ErrorTimeRange" xml:space="preserve">
+    <value>Čas musí být mezi 08:00 a 17:00.</value>
+  </data>
+  <data name="Artist.Modal.ErrorTimeBooked" xml:space="preserve">
+    <value>Tento čas je pro vybraný den již obsazený.</value>
+  </data>
+  <data name="Artist.Modal.InfoReservation" xml:space="preserve">
+    <value>Rezervace byla odeslána. Čas bude vyhodnocen.</value>
+  </data>
+  <data name="Artist.Modal.ExistingBookings" xml:space="preserve">
+    <value>Již rezervováno pro tento den:</value>
+  </data>
+  <data name="Artist.Modal.LessonsLabel" xml:space="preserve">
+    <value>Počet lekcí</value>
+  </data>
+  <data name="Artist.Modal.NameLabel" xml:space="preserve">
+    <value>Jméno</value>
+  </data>
+  <data name="Artist.Modal.PhoneLabel" xml:space="preserve">
+    <value>Telefonní číslo</value>
+  </data>
+  <data name="Artist.Modal.ErrorLessons" xml:space="preserve">
+    <value>Vyberte 1 až 5 lekcí.</value>
+  </data>
+  <data name="Artist.Modal.ErrorName" xml:space="preserve">
+    <value>Prosím zadejte jméno.</value>
+  </data>
+  <data name="Artist.Modal.ErrorPhone" xml:space="preserve">
+    <value>Prosím zadejte telefonní číslo.</value>
+  </data>
+  <data name="Artist.Modal.NextFree" xml:space="preserve">
+    <value>Následující volné:</value>
+  </data>
+  <data name="Artist.Reviews.Header" xml:space="preserve">
+    <value>Hodnocení</value>
+  </data>
+  <data name="Artist.Reviews.NameLabel" xml:space="preserve">
+    <value>Jméno</value>
+  </data>
+  <data name="Artist.Reviews.NamePlaceholder" xml:space="preserve">
+    <value>Vaše jméno</value>
+  </data>
+  <data name="Artist.Reviews.ReviewLabel" xml:space="preserve">
+    <value>Hodnocení</value>
+  </data>
+  <data name="Artist.Reviews.ReviewPlaceholder" xml:space="preserve">
+    <value>Napište vaše hodnocení…</value>
+  </data>
+  <data name="Artist.Reviews.Submit" xml:space="preserve">
+    <value>Odeslat</value>
+  </data>
+  <data name="Artist.Reviews.ErrorName" xml:space="preserve">
+    <value>Prosím zadejte jméno.</value>
+  </data>
+  <data name="Artist.Reviews.ErrorText" xml:space="preserve">
+    <value>Prosím zadejte hodnocení.</value>
+  </data>
+  <data name="Artist.Reviews.ErrorSubmit" xml:space="preserve">
+    <value>Odeslání hodnocení se nezdařilo. Zkuste to prosím znovu.</value>
+  </data>
+  <data name="Artist.AboutMe.Title" xml:space="preserve">
+    <value>O mně</value>
+  </data>
+  <data name="Artist.AboutMe.PhotoAlt" xml:space="preserve">
+    <value>Portrét umělce</value>
+  </data>
+  <data name="Artist.AboutMe.Paragraph1" xml:space="preserve">
+    <value>Jsem malíř a vizuální umělec s diplomem z výtvarného umění se zaměřením na malbu a grafiku. Moje umělecká cesta mě provedla klasickým akademickým vzděláním a vyústila v osobní tvorbu propojující tradiční techniku se současným výrazem.</value>
+  </data>
+  <data name="Artist.AboutMe.Paragraph2" xml:space="preserve">
+    <value>Pracuji především s olejem a akrylem na plátně a také s linorytem a dřevorytem. Vedle vlastní tvorby nabízím hodiny malby pro studenty a dospělé všech úrovní — rezervujte si termín pomocí kalendáře níže.</value>
+  </data>
+  <data name="Artist.AboutMe.QuoteLeft" xml:space="preserve">
+    <value>Bez velké vůle neexistují velké talenty.
+[Honoré de Balzac]</value>
+  </data>
+  <data name="Artist.AboutMe.QuoteRight" xml:space="preserve">
+    <value>Neustálá práce je zákonem jak pro umění, tak pro život.
+[Honoré de Balzac]</value>
+  </data>
+  <data name="Artist.Reservation.Title" xml:space="preserve">
+    <value>Rezervace hodiny</value>
+  </data>
+  <data name="Artist.Reservation.Description" xml:space="preserve">
+    <value>Vyberte si dostupný termín v kalendáři níže a rezervujte si hodinu malby. Individuální hodiny jsou přizpůsobeny vaší úrovni a cílům — ať začínáte od základů, nebo rozvíjíte stávající praxi.</value>
+  </data>
+  <data name="Artist.WorksGallery.Title" xml:space="preserve">
+    <value>Galerie prací</value>
+  </data>
+  <data name="Artist.Tutoring.Title" xml:space="preserve">
+    <value>Výuka</value>
+  </data>
+  <data name="Artist.Tutoring.Description" xml:space="preserve">
+    <value>Nabízím hodiny malby pro studenty a dospělé všech úrovní. Ať saháte po štětci poprvé, nebo chcete zdokonalit svou techniku, hodiny jsou přizpůsobeny vašim individuálním cílům. Společně objevujeme kresbu, kompozici, nauku o barvách a malbu v uvolněném a inspirujícím prostředí.</value>
+  </data>
+  <data name="Artist.Tutoring.StudentGallery" xml:space="preserve">
+    <value>Práce studentů</value>
+  </data>
+  <data name="Artist.DiplomaWork.Title" xml:space="preserve">
+    <value>Diplomová práce</value>
+  </data>
+  <data name="Artist.DiplomaWork.GalleryTitle" xml:space="preserve">
+    <value>Diplomová práce</value>
+  </data>
+  <data name="Artist.DiplomaWork.Description" xml:space="preserve">
+    <value>Neodmyslitelnou součástí každé knižní vazby je právě ilustrace. Kniha bez ilustrace by nebyla knihou, protože dotváří celkovou knižní a uměleckou atmosféru a tím nabízí každému čtenáři osobitý umělecký zážitek.</value>
+  </data>
+  <data name="Artist.DiplomaWork.PhotoAlt" xml:space="preserve">
+    <value>Fotografie diplomové práce</value>
+  </data>
+  <data name="Artist.MyWork.Title" xml:space="preserve">
+    <value>Moje práce</value>
+  </data>
+  <data name="Artist.MyWork.PhotoAlt" xml:space="preserve">
+    <value>Autorská grafika s pohledem na část města Gbely</value>
+  </data>
+  <data name="Artist.MyWork.Description" xml:space="preserve">
+    <value>Na autorské grafice je pohled na část města Gbely, kde jsem vyrůstala a prožila dětství.
+Po ukončení základní umělecké školy v Gbelech a následně v Senici jsem se rozhodla
+pokračovat ve studiu na Soukromé umělecké škole designu - obor: grafický
+a prostorový design. Následně jsem pokračovala ve studiu na pedagogické
+fakultě Univerzity Komenského v Bratislavě - obor: učitelství výtvarného umění.
+Závěrem mého studia byla rigorózní zkouška - téma rigorózní práce: Preference
+ilustrací u dětí předškolního věku.</value>
+  </data>
+</root>

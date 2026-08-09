@@ -1,0 +1,33 @@
+@inject CultureService CultureService
+@inject IStringLocalizer<SharedResources> Localizer
+@implements IDisposable
+
+<div class="language-switcher">
+    <select class="form-select form-select-sm" @onchange="OnLanguageChanged" value="@CultureService.CurrentCulture.TwoLetterISOLanguageName">
+        @foreach (var culture in CultureService.GetSupportedCultures())
+        {
+            <option value="@culture.Code">@culture.DisplayName</option>
+        }
+    </select>
+</div>
+
+@code {
+    protected override void OnInitialized()
+    {
+        CultureService.OnCultureChanged += StateHasChanged;
+    }
+
+    private async Task OnLanguageChanged(ChangeEventArgs e)
+    {
+        var selectedCulture = e.Value?.ToString();
+        if (!string.IsNullOrEmpty(selectedCulture))
+        {
+            await CultureService.SetCultureAsync(selectedCulture);
+        }
+    }
+
+    public void Dispose()
+    {
+        CultureService.OnCultureChanged -= StateHasChanged;
+    }
+}

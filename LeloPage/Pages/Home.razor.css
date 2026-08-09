@@ -1,0 +1,101 @@
+/* --- Home split layout --- */
+.home-split {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    min-height: 60vh;
+    gap: 0;
+}
+
+/* --- Each clickable panel --- */
+.home-panel {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--text-color);
+    border-radius: 8px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    cursor: pointer;
+}
+
+.home-panel:hover {
+    background-color: var(--hover-color);
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+/* --- Background sketch (hidden by default, revealed on hover) --- */
+.home-panel-bg {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.home-panel-bg svg {
+    width: 72%;
+    height: 72%;
+    color: var(--text-color);
+}
+
+.home-panel:hover .home-panel-bg {
+    opacity: 0.13;
+}
+
+/* --- Content inside each panel (sits above background) --- */
+.home-panel-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    gap: 0.75rem;
+}
+
+/* --- Icon --- */
+.home-panel-icon {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+}
+
+/* --- Panel title --- */
+.home-panel h2 {
+    font-size: 2rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+/* --- Vertical divider between panels --- */
+.home-divider {
+    width: 1px;
+    background-color: var(--hover-color);
+    align-self: stretch;
+    margin: 1.5rem 0;
+    flex-shrink: 0;
+}
+
+/* --- Stack vertically on small screens --- */
+@media (max-width: 640px) {
+    .home-split {
+        flex-direction: column;
+    }
+
+    .home-divider {
+        width: 100%;
+        height: 1px;
+        margin: 0 1.5rem;
+        align-self: auto;
+    }
+}

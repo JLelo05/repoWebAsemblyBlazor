@@ -1,0 +1,183 @@
+@page "/automat"
+@inject IStringLocalizer<SharedResources> Localizer
+@inject CultureService CultureService
+@implements IDisposable
+
+<PageTitle>@Localizer["Automat.PageTitle"]</PageTitle>
+
+<h1>@Localizer["Automat.Title"]</h1>
+<p class="lead">@Localizer["Automat.Description"]</p>
+
+<hr />
+
+<!-- Tech Stack Section -->
+<section class="mb-4">
+    <h3>@Localizer["Automat.TechStack"]</h3>
+    <div class="d-flex flex-wrap gap-2 mt-2">
+        @foreach (var tech in techStack)
+        {
+            <span class="badge bg-primary fs-6 px-3 py-2">@tech.Name</span>
+        }
+    </div>
+</section>
+
+<hr />
+
+<!-- Task Board Section -->
+<section class="mb-4">
+    <h3>@Localizer["Automat.TaskBoard"]</h3>
+    <div class="row mt-3">
+        <div class="col-md-4">
+            <div class="card border-secondary mb-3">
+                <div class="card-header">@Localizer["Automat.TaskPending"]</div>
+                <div class="card-body p-2">
+                    @foreach (var task in tasks.Where(t => t.Status == TaskStatus.Pending))
+                    {
+                        <div class="border rounded p-2 mb-2 bg-light">@task.Title</div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-warning mb-3">
+                <div class="card-header">@Localizer["Automat.TaskInProgress"]</div>
+                <div class="card-body p-2">
+                    @foreach (var task in tasks.Where(t => t.Status == TaskStatus.InProgress))
+                    {
+                        <div class="border rounded p-2 mb-2 bg-light">@task.Title</div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-success mb-3">
+                <div class="card-header">@Localizer["Automat.TaskDone"]</div>
+                <div class="card-body p-2">
+                    @foreach (var task in tasks.Where(t => t.Status == TaskStatus.Done))
+                    {
+                        <div class="border rounded p-2 mb-2 bg-light">@task.Title</div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr />
+
+<!-- Build Pipeline Section -->
+<section class="mb-4">
+    <h3>@Localizer["Automat.Pipeline"]</h3>
+    <table class="table table-bordered mt-2">
+        <thead class="table-dark">
+            <tr>
+                <th>@Localizer["Automat.PipelineStage"]</th>
+                <th>@Localizer["Automat.PipelineStatus"]</th>
+                <th>@Localizer["Automat.PipelineDuration"]</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var stage in pipelineStages)
+            {
+                <tr>
+                    <td>@stage.Name</td>
+                    <td>
+                        <span class="badge @GetStatusBadgeClass(stage.Status)">@stage.Status</span>
+                    </td>
+                    <td>@stage.Duration</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+
+<hr />
+
+<!-- Tools & Frameworks Section -->
+<section class="mb-4">
+    <h3>@Localizer["Automat.Tools"]</h3>
+    <div class="row mt-2">
+        @foreach (var tool in devTools)
+        {
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">@tool.Name</h5>
+                        <p class="card-text text-muted small">@tool.Category</p>
+                        <p class="card-text">@tool.Description</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+@code {
+    private List<TechItem> techStack = new();
+    private List<DevTask> tasks = new();
+    private List<PipelineStage> pipelineStages = new();
+    private List<DevTool> devTools = new();
+
+    protected override void OnInitialized()
+    {
+        CultureService.OnCultureChanged += StateHasChanged;
+
+        techStack = new List<TechItem>
+        {
+            new TechItem { Name = "Blazor WebAssembly" },
+            new TechItem { Name = ".NET 8" },
+            new TechItem { Name = "C#" },
+            new TechItem { Name = "HTML / CSS" },
+            new TechItem { Name = "Bootstrap 5" },
+            new TechItem { Name = "Git" },
+        };
+
+        tasks = new List<DevTask>
+        {
+            new DevTask { Title = "Setup CI/CD pipeline",        Status = TaskStatus.Done },
+            new DevTask { Title = "Configure unit tests",        Status = TaskStatus.Done },
+            new DevTask { Title = "Implement API integration",   Status = TaskStatus.InProgress },
+            new DevTask { Title = "Add authentication",          Status = TaskStatus.InProgress },
+            new DevTask { Title = "Write integration tests",     Status = TaskStatus.Pending },
+            new DevTask { Title = "Performance optimization",    Status = TaskStatus.Pending },
+        };
+
+        pipelineStages = new List<PipelineStage>
+        {
+            new PipelineStage { Name = "Build",   Status = "Passed",   Duration = "1m 12s" },
+            new PipelineStage { Name = "Test",    Status = "Passed",   Duration = "2m 45s" },
+            new PipelineStage { Name = "Lint",    Status = "Passed",   Duration = "0m 28s" },
+            new PipelineStage { Name = "Deploy",  Status = "Running",  Duration = "—" },
+        };
+
+        devTools = new List<DevTool>
+        {
+            new DevTool { Name = "Visual Studio",   Category = "IDE",           Description = "Primary development environment for .NET solutions." },
+            new DevTool { Name = "GitHub Actions",  Category = "CI/CD",         Description = "Automates build, test, and deployment workflows." },
+            new DevTool { Name = "xUnit",           Category = "Testing",       Description = "Unit testing framework for .NET projects." },
+            new DevTool { Name = "Docker",          Category = "Container",     Description = "Containerizes the application for consistent deployments." },
+            new DevTool { Name = "SonarCloud",      Category = "Code Quality",  Description = "Static analysis and code coverage reporting." },
+            new DevTool { Name = "Git",             Category = "Version Control", Description = "Source control with branching strategy (GitFlow)." },
+        };
+    }
+
+    private string GetStatusBadgeClass(string status) => status switch
+    {
+        "Passed"  => "bg-success",
+        "Running" => "bg-warning text-dark",
+        "Failed"  => "bg-danger",
+        _         => "bg-secondary"
+    };
+
+    public void Dispose()
+    {
+        CultureService.OnCultureChanged -= StateHasChanged;
+    }
+
+    private enum TaskStatus { Pending, InProgress, Done }
+
+    private class TechItem    { public string Name { get; set; } = string.Empty; }
+    private class DevTask     { public string Title { get; set; } = string.Empty; public TaskStatus Status { get; set; } }
+    private class PipelineStage { public string Name { get; set; } = string.Empty; public string Status { get; set; } = string.Empty; public string Duration { get; set; } = string.Empty; }
+    private class DevTool     { public string Name { get; set; } = string.Empty; public string Category { get; set; } = string.Empty; public string Description { get; set; } = string.Empty; }
+}

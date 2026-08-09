@@ -1,26 +1,37 @@
-﻿<div class="topbar-navbar navbar navbar-dark">
+﻿@inject IStringLocalizer<SharedResources> Localizer
+@inject CultureService CultureService
+@inject NavigationManager NavigationManager
+@implements IDisposable
+
+<div class="topbar-navbar navbar navbar-dark">
     <div class="container-fluid d-flex align-items-center justify-content-between">
-        <a class="navbar-brand" href="">LeloPage</a>
-        <nav class="nav flex-row">
-            <div class="nav-item px-3">
-                <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                    <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
-                </NavLink>
-            </div>
-            <div class="nav-item px-3">
-                <NavLink class="nav-link" href="counter">
-                    <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
-                </NavLink>
-            </div>
-            <div class="nav-item px-3">
-                <NavLink class="nav-link" href="weather">
-                    <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
-                </NavLink>
-            </div>
-        </nav>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <div class="d-flex align-items-center left-nav-group">
+            @if (IsArtistPage)
+            {
+                <span class="header-page-title">Barbora art</span>
+            }
+            <nav class="nav flex-row">
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="artist" aria-label="@Localizer["Nav.Art"]">
+                        <img class="artist-nav-icon" src="Resources/art.ico" alt="" aria-hidden="true" />
+                        <span class="nav-link-text">@Localizer["Nav.Art"]</span>
+                    </NavLink>
+                </div>
+             
+                @* <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="home" aria-label="@Localizer["Nav.Home"]">
+                        <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span>
+                        <span class="nav-link-text">@Localizer["Nav.Home"]</span>
+                    </NavLink>
+                </div> *@
+            </nav>
+        </div>
+        <div class="d-flex align-items-center">
+            <LanguageSwitcher />
+            <button title="@Localizer["Nav.NavigationMenu"]" class="navbar-toggler ms-2" @onclick="ToggleNavMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
     </div>
 </div>
 
@@ -29,8 +40,37 @@
 
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
+    private bool IsArtistPage
+    {
+        get
+        {
+            var relativePath = NavigationManager.ToBaseRelativePath(NavigationManager.Uri);
+            var pathWithoutQuery = relativePath.Split('?', '#')[0].Trim('/');
+
+            return string.IsNullOrEmpty(pathWithoutQuery)
+                || string.Equals(pathWithoutQuery, "artist", StringComparison.OrdinalIgnoreCase);
+        }
+    }
+
+    protected override void OnInitialized()
+    {
+        CultureService.OnCultureChanged += StateHasChanged;
+        NavigationManager.LocationChanged += OnLocationChanged;
+    }
+
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
+    }
+
+    private void OnLocationChanged(object? sender, LocationChangedEventArgs e)
+    {
+        StateHasChanged();
+    }
+
+    public void Dispose()
+    {
+        CultureService.OnCultureChanged -= StateHasChanged;
+        NavigationManager.LocationChanged -= OnLocationChanged;
     }
 }

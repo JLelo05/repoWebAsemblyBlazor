@@ -1,18 +1,31 @@
 ﻿@page "/counter"
+@inject IStringLocalizer<SharedResources> Localizer
+@inject CultureService CultureService
+@implements IDisposable
 
-<PageTitle>Counter</PageTitle>
+<PageTitle>@Localizer["Counter.PageTitle"]</PageTitle>
 
-<h1>Counter</h1>
+<h1>@Localizer["Counter.Title"]</h1>
 
-<p role="status">Current count: @currentCount</p>
+<p role="status">@Localizer["Counter.CurrentCount"]: @currentCount</p>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<button class="btn btn-primary" @onclick="IncrementCount">@Localizer["Counter.ClickMe"]</button>
 
 @code {
     private int currentCount = 0;
 
+    protected override void OnInitialized()
+    {
+        CultureService.OnCultureChanged += StateHasChanged;
+    }
+
     private void IncrementCount()
     {
         currentCount++;
+    }
+
+    public void Dispose()
+    {
+        CultureService.OnCultureChanged -= StateHasChanged;
     }
 }

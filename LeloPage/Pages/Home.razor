@@ -1,7 +1,76 @@
-﻿@page "/"
+﻿@page "/home"
+@inject IStringLocalizer<SharedResources> Localizer
+@inject CultureService CultureService
+@implements IDisposable
 
-<PageTitle>Home</PageTitle>
+<PageTitle>@Localizer["Home.PageTitle"]</PageTitle>
 
-<h1>Hello, world!</h1>
+<div class="home-split">
+    <a href="/artist" class="home-panel">
+        <div class="home-panel-bg">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" fill="none" stroke="currentColor" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round">
+                <!-- Background landscape arches -->
+                <path d="M0,175 Q30,162 60,168 Q90,174 100,165 Q110,174 140,168 Q170,162 200,175"/>
+                <path d="M0,188 Q50,180 100,183 Q150,180 200,188"/>
+            </svg>
+        </div>
+        <div class="home-panel-content">
+            <img class="home-panel-icon" src="/Resources/art.ico" alt="Art" />
+            <h2>@Localizer["Nav.Art"]</h2>
+        </div>
+    </a>
 
-Welcome to your new app.
+    @*<div class="home-divider"></div>
+
+    <a href="/automat" class="home-panel">
+        <div class="home-panel-bg">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" fill="none" stroke="currentColor" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round">
+                <!-- Pellet trail -->
+                <circle cx="168" cy="100" r="4" fill="currentColor" stroke="none"/>
+                <circle cx="192" cy="100" r="4" fill="currentColor" stroke="none"/>
+                <circle cx="216" cy="100" r="4" fill="currentColor" stroke="none"/>
+                <circle cx="240" cy="100" r="4" fill="currentColor" stroke="none"/>
+                <circle cx="264" cy="100" r="4" fill="currentColor" stroke="none"/>
+                <!-- Power pellet -->
+                <circle cx="282" cy="100" r="7" fill="currentColor" stroke="none"/>
+                <!-- Pac-Man body: center(95,100) r=52, mouth ±28° -->
+                <!-- top of mouth: 95+52*cos(28°)=90.9→140.9,  100-52*sin(28°)=75.6 -->
+                <!-- bottom: 140.9, 124.4 -->
+                <path d="M95,100 L141,76 A52,52 0 1,0 141,124 Z"/>
+                <!-- Eye -->
+                <circle cx="107" cy="78" r="4" fill="currentColor" stroke="none"/>
+                <!-- Ghost body -->
+                <path d="M208,52 Q208,28 232,28 Q256,28 256,52 L256,78 Q251,70 245,78 Q239,70 232,78 Q225,70 219,78 Q213,70 208,78 Z"/>
+                <!-- Ghost eyes (whites + pupils) -->
+                <ellipse cx="222" cy="48" rx="5" ry="6"/>
+                <circle cx="223" cy="50" r="2.5" fill="currentColor" stroke="none"/>
+                <ellipse cx="242" cy="48" rx="5" ry="6"/>
+                <circle cx="243" cy="50" r="2.5" fill="currentColor" stroke="none"/>
+                <!-- Maze corridor lines (hint of the maze) -->
+                <path d="M20,40 L20,165 L270,165 L270,140"/>
+                <path d="M20,40 L270,40 L270,65"/>
+                <path d="M50,40 L50,75 L120,75 L120,40"/>
+                <path d="M150,40 L150,75 L220,75"/>
+                <path d="M50,130 L50,165"/>
+                <path d="M80,130 L170,130 L170,165"/>
+            </svg>
+        </div>
+        <div class="home-panel-content">
+            <img class="home-panel-icon" src="/Resources/automat.ico" alt="Automat" />
+            <h2>@Localizer["Nav.Automat"]</h2>
+        </div>
+    </a>*@
+</div>
+
+@code {
+    protected override void OnInitialized()
+    {
+        CultureService.OnCultureChanged += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        CultureService.OnCultureChanged -= StateHasChanged;
+    }
+}
+

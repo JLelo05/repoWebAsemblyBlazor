@@ -1,0 +1,9 @@
+global using Xunit;
+global using Bunit;
+global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.Localization;
+global using Microsoft.JSInterop;
+global using Moq;
+global using LeloPage.Resources;
+global using LeloPage.Services;
+global using LeloPage.Tests.Helpers;

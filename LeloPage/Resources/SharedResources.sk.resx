@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" msdata:Ordinal="5" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Nav.Home" xml:space="preserve">
+    <value>Domov</value>
+  </data>
+  <data name="Nav.Counter" xml:space="preserve">
+    <value>Počítadlo</value>
+  </data>
+  <data name="Nav.Weather" xml:space="preserve">
+    <value>Počasie</value>
+  </data>
+  <data name="Nav.NavigationMenu" xml:space="preserve">
+    <value>Navigačné menu</value>
+  </data>
+  <data name="Home.PageTitle" xml:space="preserve">
+    <value>Domov</value>
+  </data>
+  <data name="Home.HelloWorld" xml:space="preserve">
+    <value>Ahoj svet!</value>
+  </data>
+  <data name="Home.Welcome" xml:space="preserve">
+    <value>Vitajte vo vašej novej aplikácii.</value>
+  </data>
+  <data name="Counter.PageTitle" xml:space="preserve">
+    <value>Počítadlo</value>
+  </data>
+  <data name="Counter.Title" xml:space="preserve">
+    <value>Počítadlo</value>
+  </data>
+  <data name="Counter.CurrentCount" xml:space="preserve">
+    <value>Aktuálny počet</value>
+  </data>
+  <data name="Counter.ClickMe" xml:space="preserve">
+    <value>Klikni na mňa</value>
+  </data>
+  <data name="Weather.PageTitle" xml:space="preserve">
+    <value>Počasie</value>
+  </data>
+  <data name="Weather.Title" xml:space="preserve">
+    <value>Počasie</value>
+  </data>
+  <data name="Weather.Description" xml:space="preserve">
+    <value>Táto komponenta demonštruje načítanie dát zo servera.</value>
+  </data>
+  <data name="Weather.Loading" xml:space="preserve">
+    <value>Načítavam...</value>
+  </data>
+  <data name="Weather.Date" xml:space="preserve">
+    <value>Dátum</value>
+  </data>
+  <data name="Weather.TempC" xml:space="preserve">
+    <value>Teplota (C)</value>
+  </data>
+  <data name="Weather.TempF" xml:space="preserve">
+    <value>Teplota (F)</value>
+  </data>
+  <data name="Weather.Summary" xml:space="preserve">
+    <value>Zhrnutie</value>
+  </data>
+  <data name="Weather.TempCelsiusLabel" xml:space="preserve">
+    <value>Teplota v Celziách</value>
+  </data>
+  <data name="Weather.TempFahrenheitLabel" xml:space="preserve">
+    <value>Teplota vo Fahrenheitoch</value>
+  </data>
+  <data name="NotFound.PageTitle" xml:space="preserve">
+    <value>Nenájdené</value>
+  </data>
+  <data name="NotFound.Message" xml:space="preserve">
+    <value>Prepáčte, na tejto adrese nič nie je.</value>
+  </data>
+  <data name="Error.UnhandledError" xml:space="preserve">
+    <value>Vyskytla sa neošetrená chyba.</value>
+  </data>
+  <data name="Error.Reload" xml:space="preserve">
+    <value>Obnoviť</value>
+  </data>
+  <data name="Language.English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="Language.Slovak" xml:space="preserve">
+    <value>Slovenčina</value>
+  </data>
+  <data name="Language.Czech" xml:space="preserve">
+    <value>Čeština</value>
+  </data>
+  <data name="Nav.Art" xml:space="preserve">
+    <value>Umenie</value>
+  </data>
+  <data name="Nav.Artist" xml:space="preserve">
+    <value>Umelci</value>
+  </data>
+  <data name="Artist.PageTitle" xml:space="preserve">
+    <value>Umelci</value>
+  </data>
+  <data name="Artist.Title" xml:space="preserve">
+    <value>Umelci</value>
+  </data>
+  <data name="Artist.Description" xml:space="preserve">
+    <value>Preskúmajte našu zbierku talentovaných umelcov.</value>
+  </data>
+  <data name="Artist.FeaturedArtists" xml:space="preserve">
+    <value>Odporúčaní umelci</value>
+  </data>
+  <data name="Artist.Loading" xml:space="preserve">
+    <value>Načítavam umelcov...</value>
+  </data>
+  <data name="Nav.Automat" xml:space="preserve">
+    <value>Automat</value>
+  </data>
+  <data name="Automat.PageTitle" xml:space="preserve">
+    <value>Automat</value>
+  </data>
+  <data name="Automat.Title" xml:space="preserve">
+    <value>Automat</value>
+  </data>
+  <data name="Automat.Description" xml:space="preserve">
+    <value>Prehľad vývoja softvéru — technológie, úlohy, pipeline a nástroje.</value>
+  </data>
+  <data name="Automat.TechStack" xml:space="preserve">
+    <value>Technologický stack</value>
+  </data>
+  <data name="Automat.TaskBoard" xml:space="preserve">
+    <value>Nástenka úloh</value>
+  </data>
+  <data name="Automat.TaskPending" xml:space="preserve">
+    <value>Čakajúce</value>
+  </data>
+  <data name="Automat.TaskInProgress" xml:space="preserve">
+    <value>V riešení</value>
+  </data>
+  <data name="Automat.TaskDone" xml:space="preserve">
+    <value>Hotovo</value>
+  </data>
+  <data name="Automat.Pipeline" xml:space="preserve">
+    <value>Build pipeline</value>
+  </data>
+  <data name="Automat.PipelineStage" xml:space="preserve">
+    <value>Fáza</value>
+  </data>
+  <data name="Automat.PipelineStatus" xml:space="preserve">
+    <value>Stav</value>
+  </data>
+  <data name="Automat.PipelineDuration" xml:space="preserve">
+    <value>Trvanie</value>
+  </data>
+  <data name="Automat.Tools" xml:space="preserve">
+    <value>Nástroje a frameworky</value>
+  </data>
+  <data name="Artist.Calendar.Title" xml:space="preserve">
+    <value>Registračný kalendár</value>
+  </data>
+  <data name="Artist.Calendar.Selected" xml:space="preserve">
+    <value>Vybraný:</value>
+  </data>
+  <data name="Artist.Calendar.Register" xml:space="preserve">
+    <value>Registrovať</value>
+  </data>
+  <data name="Artist.Calendar.SavedTitle" xml:space="preserve">
+    <value>Uložené registrácie</value>
+  </data>
+  <data name="Artist.Modal.Title" xml:space="preserve">
+    <value>Nová registrácia</value>
+  </data>
+  <data name="Artist.Modal.TimeLabel" xml:space="preserve">
+    <value>Navrhovaný čas</value>
+  </data>
+  <data name="Artist.Modal.Save" xml:space="preserve">
+    <value>Uložiť</value>
+  </data>
+  <data name="Artist.Modal.Cancel" xml:space="preserve">
+    <value>Zrušiť</value>
+  </data>
+  <data name="Artist.Modal.ErrorTime" xml:space="preserve">
+    <value>Prosím zadajte čas.</value>
+  </data>
+  <data name="Artist.Modal.ErrorTimeRange" xml:space="preserve">
+    <value>Čas musí byť medzi 08:00 a 17:00.</value>
+  </data>
+  <data name="Artist.Modal.ErrorTimeBooked" xml:space="preserve">
+    <value>Tento čas je pre vybraný deň už obsadený.</value>
+  </data>
+  <data name="Artist.Modal.InfoReservation" xml:space="preserve">
+    <value>Rezervácia bola odoslaná. Čas bude vyhodnotený.</value>
+  </data>
+  <data name="Artist.Modal.ExistingBookings" xml:space="preserve">
+    <value>Už rezervované pre tento deň:</value>
+  </data>
+  <data name="Artist.Modal.LessonsLabel" xml:space="preserve">
+    <value>Počet lekcií</value>
+  </data>
+  <data name="Artist.Modal.NameLabel" xml:space="preserve">
+    <value>Meno</value>
+  </data>
+  <data name="Artist.Modal.PhoneLabel" xml:space="preserve">
+    <value>Telefónne číslo</value>
+  </data>
+  <data name="Artist.Modal.ErrorLessons" xml:space="preserve">
+    <value>Vyberte 1 až 5 lekcií.</value>
+  </data>
+  <data name="Artist.Modal.ErrorName" xml:space="preserve">
+    <value>Zadajte prosím meno.</value>
+  </data>
+  <data name="Artist.Modal.ErrorPhone" xml:space="preserve">
+    <value>Zadajte prosím telefónne číslo.</value>
+  </data>
+  <data name="Artist.Modal.NextFree" xml:space="preserve">
+    <value>Nasledujúce voľné:</value>
+  </data>
+  <data name="Artist.Reviews.Header" xml:space="preserve">
+    <value>Recenzie</value>
+  </data>
+  <data name="Artist.Reviews.NameLabel" xml:space="preserve">
+    <value>Meno</value>
+  </data>
+  <data name="Artist.Reviews.NamePlaceholder" xml:space="preserve">
+    <value>Vaše meno</value>
+  </data>
+  <data name="Artist.Reviews.ReviewLabel" xml:space="preserve">
+    <value>Hodnotenie</value>
+  </data>
+  <data name="Artist.Reviews.ReviewPlaceholder" xml:space="preserve">
+    <value>Napíšte vaše hodnotenie…</value>
+  </data>
+  <data name="Artist.Reviews.Submit" xml:space="preserve">
+    <value>Odoslať</value>
+  </data>
+  <data name="Artist.Reviews.ErrorName" xml:space="preserve">
+    <value>Zadajte prosím meno.</value>
+  </data>
+  <data name="Artist.Reviews.ErrorText" xml:space="preserve">
+    <value>Zadajte prosím hodnotenie.</value>
+  </data>
+  <data name="Artist.Reviews.ErrorSubmit" xml:space="preserve">
+    <value>Odoslanie hodnotenia zlyhalo. Skúste to prosím neskôr.</value>
+  </data>
+  <data name="Artist.AboutMe.Title" xml:space="preserve">
+    <value>Pedagóg a výtvarník</value>
+  </data>
+  <data name="Artist.AboutMe.PhotoAlt" xml:space="preserve">
+    <value>Portrét umelca</value>
+  </data>
+  <data name="Artist.AboutMe.Paragraph1" xml:space="preserve">
+    <value>V Bratislave žijem a pôsobím 10 rokov ako učiteľ výtvarného umenia na ZUŠ Vrbenského 1 v Rači. </value>
+  </data>
+  <data name="Artist.AboutMe.Paragraph2" xml:space="preserve">
+    <value>    Učiteľ má v sebe čaro, premeniť zlú náladu na dobrú a tú dobrú na ešte lepšiu. Rozvíja našu fantáziu, slovnú zásobu, predstavivosť a v neposlednom rade nás vzdeláva a duševne obohacuje.</value>
+  </data>
+  <data name="Artist.AboutMe.QuoteLeft" xml:space="preserve">
+    <value>Bez velké vůle neexistují velké talenty.
+[Honoré de Balzac]</value>
+  </data>
+  <data name="Artist.AboutMe.QuoteRight" xml:space="preserve">
+    <value>Neustála práca je zákonom ako pre umenie, tak pre život.
+[Honoré de Balzac]</value>
+  </data>
+  <data name="Artist.Reservation.Title" xml:space="preserve">
+    <value>Rezervácia hodiny</value>
+  </data>
+  <data name="Artist.Reservation.Description" xml:space="preserve">
+    <value>Vyberte si dostupný termín v kalendári nižšie a rezervujte si hodinu. Prípadne ma neváhajte kontaktovať. Rada zodpoviem Vaše otázky.</value>
+  </data>
+  <data name="Artist.WorksGallery.Title" xml:space="preserve">
+    <value>Galéria prác</value>
+  </data>
+  <data name="Artist.Tutoring.Title" xml:space="preserve">
+    <value>Doučovanie</value>
+  </data>
+  <data name="Artist.Tutoring.Description" xml:space="preserve">
+    <value>Ponúkam prípravu na prijímacie skúšky na strednú a vysokú umeleckú školu. Príprava zahŕňa individuálny prístup ku každému žiakovi so zameraním na
+            výber umeleckého odboru. Zdokonaľovanie sa v jednotlivých technikách cez kresbu zátišia, portrétu a voľných autorských prác. Precízna príprava
+            umeleckého portfólia podľa požiadaviek a potrieb žiaka. Mojím cieľom je prostredníctvom hry s ceruzkou a experimentovania s farbami,
+            objaviť v každej príprave osobité prvky a preniesť ich na papier.</value>
+  </data>
+  <data name="Artist.Tutoring.StudentGallery" xml:space="preserve">
+    <value>Práce študentov</value>
+  </data>
+  <data name="Artist.DiplomaWork.Title" xml:space="preserve">
+    <value>Diplomová práca</value>
+  </data>
+  <data name="Artist.DiplomaWork.GalleryTitle" xml:space="preserve">
+    <value>Diplomová práca</value>
+  </data>
+  <data name="Artist.DiplomaWork.Description" xml:space="preserve">
+    <value>Neodmysliteľnou súčasťou každej knižnej väzby je práve ilustrácia. Kniha bez ilustrácie, by nebola knihou, pretože dotvára celkovú knižnú a umeleckú atmosféru a tým ponúka každému čitateľovi osobitý umelecký zážitok.</value>
+  </data>
+  <data name="Artist.DiplomaWork.PhotoAlt" xml:space="preserve">
+    <value>Fotografia diplomovej práce</value>
+  </data>
+  <data name="Artist.MyWork.Title" xml:space="preserve">
+    <value>Moja práca</value>
+  </data>
+  <data name="Artist.MyWork.PhotoAlt" xml:space="preserve">
+    <value>Autorská grafika s pohľadom na časť mesta Gbely</value>
+  </data>
+  <data name="Artist.MyWork.Description" xml:space="preserve">
+    <value>Na autorskej grafike je pohľad na časť mesta Gbely, kde som vyrastala a prežila detstvo. Po ukončení základnej umeleckej školy v Gbeloch a následne v Senici, som sa rozhodla pokračovať v štúdiu na Súkromnej umeleckej škole dizajnu v Bratislave - odbor : grafický a priestorový dizajn. 
+    Následne som pokračovala v štúdiu na pedagogickej fakulte Univerzity Komenského v Bratislave - odbor : učiteľ výtvarného umenia. Záverom môjho štúdia bola rigorózna skúška - téma rigoróznej práce : Preferencia ilustrácií u detí predškolského veku.</value>
+  </data>
+</root>
