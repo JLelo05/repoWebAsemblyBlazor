@@ -1,0 +1,86 @@
+@using LeloPage.Services
+@using Microsoft.AspNetCore.Components.Forms
+@using System.Text.Json
+@inject YahooConverterService ConverterService
+@inject IJSRuntime JS
+
+<!-- Converter Modal -->
+<div class="modal fade" id="converterModal" tabindex="-1" aria-labelledby="converterModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="converterModalLabel">YahooConverter</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label">Source (select .xlsx file)</label>
+                    <input @ref="fileInput" class="form-control" type="file" accept=".xlsx" />
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-primary" @onclick="ConvertYahooAsync" disabled="@isConverting">
+                        @(isConverting ? "Converting..." : "Convert")
+                    </button>
+                    <span class="ms-3 text-muted">@statusMessage</span>
+                </div>
+                <div class="form-text">Conversion runs in the browser; after completion a CSV download will be triggered.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private ElementReference fileInput;
+    private string statusMessage = string.Empty;
+    private bool isConverting = false;
+
+    private async Task ConvertYahooAsync()
+    {
+        isConverting = true;
+        statusMessage = "Converting...";
+
+        try
+        {
+            var fileData = await JS.InvokeAsync<JsonElement>("readFileAsBytes", fileInput);
+            if (fileData.ValueKind == JsonValueKind.Null || fileData.ValueKind == JsonValueKind.Undefined)
+            {
+                statusMessage = "No file selected.";
+                isConverting = false;
+                return;
+            }
+
+            var fileName = fileData.TryGetProperty("name", out var nameProp) ? nameProp.GetString() ?? string.Empty : string.Empty;
+            var fileBytes = fileData.TryGetProperty("data", out var dataProp)
+                ? dataProp.EnumerateArray().Select(x => x.GetByte()).ToArray()
+                : Array.Empty<byte>();
+
+            if (string.IsNullOrEmpty(fileName) || fileBytes.Length == 0)
+            {
+                statusMessage = "No file data received.";
+                isConverting = false;
+                return;
+            }
+
+            using var memoryStream = new MemoryStream(fileBytes);
+            var (message, csvData, fileNameOut) = await ConverterService.ConvertAsync(memoryStream, fileName);
+            statusMessage = message;
+
+            if (csvData != null && !string.IsNullOrEmpty(fileNameOut))
+            {
+                // Trigger download
+                await JS.InvokeVoidAsync("downloadFile", csvData, fileNameOut, "text/csv");
+            }
+        }
+        catch (Exception ex)
+        {
+            statusMessage = $"Conversion error: {ex.Message}";
+            Console.Error.WriteLine(ex);
+        }
+        finally
+        {
+            isConverting = false;
+        }
+    }
+
+    public record FileListEntry(string Name, IBrowserFile Data);
+}

@@ -13,6 +13,7 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 
 builder.Services.AddScoped<ReviewService>();
 builder.Services.AddScoped<ReservationService>();
+builder.Services.AddScoped<YahooConverterService>();
 
 // Add localization services
 builder.Services.AddLocalization();
